@@ -1,15 +1,7 @@
-<p align="center">
-  
-</p>
-
-<div align="center">
-
 # [ravisiontech.com](https://ravisiontech.com)
 
 Ravision Tech's official [website](https://dylanravel.com) is an open-source [Next.js](https://nextjs.org/) website. It is written in [TypeScript](https://www.typescriptlang.org) and
 uses [React](https://reactjs.org/).
-
-</div>
 
 ## Installation
 
