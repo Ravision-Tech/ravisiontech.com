@@ -72,28 +72,28 @@ const MouseTrackedLogo = () => {
         src="/branding/logo-icon-split/back-of-eye.svg"
         fill
         unoptimized
-        alt={`The Logomark of ${Branding.Name}`}
-        className="absolute inset-0 w-32 h-full"
+        alt={`A part of the logo for ${Branding.Name}`}
+        className="absolute inset-0 w-32 h-full select-none"
         draggable={false}
       />
       <Image
         src="/branding/logo-icon-split/eye.svg"
         fill
         unoptimized
-        alt={`The Logomark of ${Branding.Name}`}
+        alt={`A part of the logo for ${Branding.Name}`}
         style={{
           transform: `translate(${eyePos.x}px, ${eyePos.y}px)`,
           transition: "transform 0.1s linear",
         }}
-        className="absolute inset-0 w-32 h-full"
+        className="absolute inset-0 w-32 h-full select-none"
         draggable={false}
       />
       <Image
         src="/branding/logo-icon-split/eyelid.svg"
         fill
         unoptimized
-        alt={`The Logomark of ${Branding.Name}`}
-        className="absolute inset-0 w-32 h-full"
+        alt={`A part of the logo for ${Branding.Name}`}
+        className="absolute inset-0 w-32 h-full select-none"
         draggable={false}
       />
     </div>
