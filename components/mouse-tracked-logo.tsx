@@ -1,22 +1,24 @@
 "use client";
 
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 import { Branding } from "@/lib/branding";
 
 const EYE_RADIUS_IN_PX = 16;
+const ONLY_TRACK_ON_HOVER = false;
 
 const MouseTrackedLogo = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [eyePos, setEyePos] = useState({ x: 0, y: 0 });
+  const [, setIsHovered] = useState(false);
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const updateEyePos = (clientX: number, clientY: number) => {
     const rect = containerRef.current?.getBoundingClientRect();
     if (!rect) return;
 
-    const mouseX = e.clientX - rect.left;
-    const mouseY = e.clientY - rect.top;
+    const mouseX = clientX - rect.left;
+    const mouseY = clientY - rect.top;
     const centerX = rect.width / 2;
     const centerY = rect.height / 2;
 
@@ -33,8 +35,29 @@ const MouseTrackedLogo = () => {
     setEyePos({ x: dx, y: dy });
   };
 
+  useEffect(() => {
+    if (!ONLY_TRACK_ON_HOVER) {
+      const handleMouseMove = (e: MouseEvent) => {
+        updateEyePos(e.clientX, e.clientY);
+      };
+      window.addEventListener("mousemove", handleMouseMove);
+      return () => window.removeEventListener("mousemove", handleMouseMove);
+    }
+  }, []);
+
   const handleMouseLeave = () => {
     setEyePos({ x: 0, y: 0 });
+    setIsHovered(false);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (ONLY_TRACK_ON_HOVER) {
+      updateEyePos(e.clientX, e.clientY);
+    }
+  };
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
   };
 
   return (
@@ -43,6 +66,7 @@ const MouseTrackedLogo = () => {
       className="relative w-32 h-32"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
+      onMouseEnter={handleMouseEnter}
     >
       <Image
         src="/branding/logo-icon-split/back-of-eye.svg"

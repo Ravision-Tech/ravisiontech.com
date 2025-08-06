@@ -24,16 +24,16 @@ const MainPage = () => {
             </div>
             <div className="flex flex-col items-center mt-8 space-y-2">
               <div className="flex flex-row gap-4 items-center">
-                <ConstructionIcon className="text-white" />
+                <ConstructionIcon className="text-yellow-400 fill-black" />
                 <h2 className="text-lg sm:text-2xl font-semibold text-white text-center">Website Under Construction</h2>
-                <ConstructionIcon className="text-white" />
+                <ConstructionIcon className="text-yellow-400 fill-black" />
               </div>
               <p className="text-white/80 text-center">
                 For inquiries or hiring, please reach out to{" "}
                 <Link
                   href="mailto:dylan@ravisiontech.com"
                   target="_blank"
-                  className="underline hover:text-white transition-colors duration-200"
+                  className="underline underline-offset-2 hover:text-white transition-colors duration-200"
                 >
                   dylan@ravisiontech.com
                 </Link>
