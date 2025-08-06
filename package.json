@@ -13,7 +13,7 @@
     "format:check": "prettier . --check"
   },
   "dependencies": {
-    "@next/third-parties": "^15.3.3",
+    "@next/third-parties": "^15.4.5",
     "@radix-ui/react-accordion": "^1.2.11",
     "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-dialog": "^1.1.14",

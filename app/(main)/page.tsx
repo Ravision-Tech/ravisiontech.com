@@ -12,7 +12,7 @@ const MainPage = () => {
           <div className="flex-1 flex-col min-w-0 space-y-10">
             <div className="flex flex-col gap-4 items-center">
               <Image
-                src={Branding.Logomark}
+                src={Branding.Logos.Logomark}
                 width={1}
                 height={1}
                 unoptimized
@@ -20,7 +20,7 @@ const MainPage = () => {
                 className="w-32 h-full"
               />
               <Image
-                src={Branding.Wordmark}
+                src={Branding.Logos.Wordmark}
                 width={1}
                 height={1}
                 unoptimized
