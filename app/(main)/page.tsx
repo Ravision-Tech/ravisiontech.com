@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import { ConstructionIcon } from "lucide-react";
 
 import { Branding } from "@/lib/branding";
 
@@ -25,6 +27,24 @@ const MainPage = () => {
                 alt={`The Wordmark of ${Branding.Name}`}
                 className="w-96 h-full"
               />
+            </div>
+            <div className="flex flex-col items-center mt-8 space-y-2">
+              <div className="flex flex-row gap-4 items-center">
+                <ConstructionIcon className="text-white" />
+                <h2 className="text-2xl font-semibold text-white">Website Under Construction</h2>
+                <ConstructionIcon className="text-white" />
+              </div>
+              <p className="text-white/80 text-center">
+                For inquiries or hiring, please reach out to{" "}
+                <Link
+                  href="mailto:dylan@ravisiontech.com"
+                  target="_blank"
+                  className="underline hover:text-white transition-colors duration-200"
+                >
+                  dylan@ravisiontech.com
+                </Link>
+                .
+              </p>
             </div>
           </div>
         </div>
