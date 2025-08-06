@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ConstructionIcon } from "lucide-react";
 
+import MouseTrackedLogo from "@/components/mouse-tracked-logo";
 import { Branding } from "@/lib/branding";
 
 const MainPage = () => {
@@ -11,14 +12,7 @@ const MainPage = () => {
         <div className="flex flex-col items-center md:flex-row max-w-[60rem] frosted-glass-card p-10 gap-10">
           <div className="flex-1 flex-col min-w-0 space-y-10">
             <div className="flex flex-col gap-4 items-center">
-              <Image
-                src={Branding.Logos.Logomark}
-                width={1}
-                height={1}
-                unoptimized
-                alt={`The Logomark of ${Branding.Name}`}
-                className="w-32 h-full"
-              />
+              <MouseTrackedLogo />
               <Image
                 src={Branding.Logos.Wordmark}
                 width={1}
