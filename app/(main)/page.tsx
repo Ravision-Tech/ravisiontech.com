@@ -31,7 +31,7 @@ const MainPage = () => {
             <div className="flex flex-col items-center mt-8 space-y-2">
               <div className="flex flex-row gap-4 items-center">
                 <ConstructionIcon className="text-white" />
-                <h2 className="text-2xl font-semibold text-white">Website Under Construction</h2>
+                <h2 className="text-lg sm:text-2xl font-semibold text-white text-center">Website Under Construction</h2>
                 <ConstructionIcon className="text-white" />
               </div>
               <p className="text-white/80 text-center">
@@ -50,7 +50,7 @@ const MainPage = () => {
         </div>
       </main>
       <footer className="text-white/50 flex flex-col items-center m-4">
-        <p>COPYRIGHT (©) 2025, Ravision Tech LLC</p>
+        <p className="text-center">COPYRIGHT (©) 2025, Ravision Tech LLC</p>
       </footer>
     </div>
   );
