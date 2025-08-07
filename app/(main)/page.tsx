@@ -18,6 +18,7 @@ const MainPage = () => {
                 width={1}
                 height={1}
                 unoptimized
+                priority
                 alt={`The Wordmark of ${Branding.Name}`}
                 className="w-96 h-full"
               />
