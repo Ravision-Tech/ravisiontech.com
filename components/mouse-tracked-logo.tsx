@@ -12,6 +12,9 @@ const MouseTrackedLogo = () => {
   const containerRef = useRef<HTMLDivElement>(null);
   const [eyePos, setEyePos] = useState({ x: 0, y: 0 });
   const [, setIsHovered] = useState(false);
+  const animationFrameRef = useRef<number | undefined>(undefined);
+  const targetPosRef = useRef({ x: 0, y: 0 });
+  const currentPosRef = useRef({ x: 0, y: 0 });
 
   const updateEyePos = (clientX: number, clientY: number) => {
     const rect = containerRef.current?.getBoundingClientRect();
@@ -32,8 +35,36 @@ const MouseTrackedLogo = () => {
       dy *= scale;
     }
 
-    setEyePos({ x: dx, y: dy });
+    targetPosRef.current = { x: dx, y: dy };
   };
+
+  useEffect(() => {
+    const smoothing = 0.06; // (0.1 = smooth, 0.5 = snappy)
+
+    const animate = () => {
+      const dx = targetPosRef.current.x - currentPosRef.current.x;
+      const dy = targetPosRef.current.y - currentPosRef.current.y;
+
+      if (Math.abs(dx) > 0.01 || Math.abs(dy) > 0.01) {
+        currentPosRef.current.x += dx * smoothing;
+        currentPosRef.current.y += dy * smoothing;
+        setEyePos({
+          x: currentPosRef.current.x,
+          y: currentPosRef.current.y,
+        });
+      }
+
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    animationFrameRef.current = requestAnimationFrame(animate);
+
+    return () => {
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     if (!ONLY_TRACK_ON_HOVER) {
@@ -46,7 +77,7 @@ const MouseTrackedLogo = () => {
   }, []);
 
   const handleMouseLeave = () => {
-    setEyePos({ x: 0, y: 0 });
+    targetPosRef.current = { x: 0, y: 0 };
     setIsHovered(false);
   };
 
@@ -85,7 +116,7 @@ const MouseTrackedLogo = () => {
         alt={`A part of the logo for ${Branding.Name}`}
         style={{
           transform: `translate(${eyePos.x}px, ${eyePos.y}px)`,
-          transition: "transform 0.1s linear",
+          willChange: "transform",
         }}
         className="absolute inset-0 w-32 h-full select-none"
         draggable={false}
