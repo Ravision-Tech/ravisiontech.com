@@ -45,7 +45,7 @@ const MainPage = () => {
         </div>
       </main>
       <footer className="text-white/50 flex flex-col items-center m-4">
-        <p className="text-center">COPYRIGHT (©) 2025, Ravision Tech LLC</p>
+        <p className="text-center">COPYRIGHT (©) {Branding.CopyrightYear}, Ravision Tech LLC</p>
       </footer>
     </div>
   );
