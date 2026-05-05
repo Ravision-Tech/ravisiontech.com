@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { Branding } from "@/lib/branding";
 
-const EYE_RADIUS_IN_PX = 16;
+const EYE_RADIUS_IN_PX = 5;
 const ONLY_TRACK_ON_HOVER = false;
 
 const MouseTrackedLogo = () => {
@@ -15,6 +15,8 @@ const MouseTrackedLogo = () => {
   const animationFrameRef = useRef<number | undefined>(undefined);
   const targetPosRef = useRef({ x: 0, y: 0 });
   const currentPosRef = useRef({ x: 0, y: 0 });
+  const isTouchDevice =
+    typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
 
   const updateEyePos = (clientX: number, clientY: number) => {
     const rect = containerRef.current?.getBoundingClientRect();
@@ -39,6 +41,8 @@ const MouseTrackedLogo = () => {
   };
 
   useEffect(() => {
+    if (isTouchDevice) return;
+
     const smoothing = 0.06; // (0.1 = smooth, 0.5 = snappy)
 
     const animate = () => {
@@ -64,17 +68,17 @@ const MouseTrackedLogo = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, []);
+  }, [isTouchDevice]);
 
   useEffect(() => {
-    if (!ONLY_TRACK_ON_HOVER) {
-      const handleMouseMove = (e: MouseEvent) => {
-        updateEyePos(e.clientX, e.clientY);
-      };
-      window.addEventListener("mousemove", handleMouseMove);
-      return () => window.removeEventListener("mousemove", handleMouseMove);
-    }
-  }, []);
+    if (isTouchDevice || ONLY_TRACK_ON_HOVER) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      updateEyePos(e.clientX, e.clientY);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [isTouchDevice]);
 
   const handleMouseLeave = () => {
     targetPosRef.current = { x: 0, y: 0 };
@@ -94,7 +98,7 @@ const MouseTrackedLogo = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-32 h-32"
+      className="relative w-10 h-10"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
@@ -105,7 +109,7 @@ const MouseTrackedLogo = () => {
         unoptimized
         priority
         alt={`A part of the logo for ${Branding.Name}`}
-        className="absolute inset-0 w-32 h-full select-none"
+        className="absolute inset-0 w-10 h-full select-none"
         draggable={false}
       />
       <Image
@@ -118,7 +122,7 @@ const MouseTrackedLogo = () => {
           transform: `translate(${eyePos.x}px, ${eyePos.y}px)`,
           willChange: "transform",
         }}
-        className="absolute inset-0 w-32 h-full select-none"
+        className="absolute inset-0 w-10 h-full select-none"
         draggable={false}
       />
       <Image
@@ -127,7 +131,7 @@ const MouseTrackedLogo = () => {
         unoptimized
         priority
         alt={`A part of the logo for ${Branding.Name}`}
-        className="absolute inset-0 w-32 h-full select-none"
+        className="absolute inset-0 w-10 h-full select-none"
         draggable={false}
       />
     </div>

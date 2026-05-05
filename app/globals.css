@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 @custom-variant dark (&:is(.dark *));
@@ -41,7 +40,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  --font-Montserrat: "Montserrat", sans-serif;
   --font-ibm-plex-mono: "IBM Plex Mono", monospace;
 }
 
@@ -126,6 +124,51 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Brand utilities */
+@layer utilities {
+  .font-mono-brand {
+    font-family: var(--font-jetbrains-mono), monospace;
+  }
+  .animate-ticker {
+    animation: ticker 28s linear infinite;
+  }
+  .animate-fade-up {
+    animation: fadeUp 0.7s ease both;
+  }
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: #0f0f0f;
+}
+::-webkit-scrollbar-thumb {
+  background: #333;
+  border-radius: 3px;
 }
 
 /* CSS class when an element needs to be only seen by screen readers */

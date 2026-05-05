@@ -1,6 +1,17 @@
 import type { Metadata } from "next";
+import { JetBrains_Mono, Montserrat } from "next/font/google";
 
 import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  variable: "--font-Montserrat",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-jetbrains-mono",
+});
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 
@@ -9,7 +20,7 @@ import { DomainURL } from "@/lib/links";
 
 export const metadata: Metadata = {
   metadataBase: new URL(DomainURL),
-  title: Branding.Name,
+  title: `${Branding.Name} – Web Development Services`,
   description: `The official website for ${Branding.Name}.`,
   icons: {
     icon: [
@@ -22,12 +33,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: DomainURL,
-    title: Branding.Name,
+    title: `${Branding.Name} – Web Development Services`,
     images: [{ url: Branding.SocialPreviewImage, alt: "A picture reading 'Ravision Tech'" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: Branding.Name,
+    title: `${Branding.Name} – Web Development Services`,
     images: [{ url: Branding.SocialPreviewImage, alt: "A picture reading 'Ravision Tech'" }],
   },
 };
@@ -38,7 +49,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={`${montserrat.variable} ${jetbrainsMono.variable}`}>
       <head />
       <body className="bg-[#131313] overflow-x-clip">{children}</body>
       <GoogleAnalytics gaId="G-LMLYM4Y2FS" />
