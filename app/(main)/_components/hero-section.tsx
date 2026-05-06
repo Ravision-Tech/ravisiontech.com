@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { SparklesIcon } from "lucide-react";
 
 import HeroWindow from "@/components/hero-window";
 
@@ -28,9 +29,9 @@ const HeroSection = () => {
           <div className="flex gap-4 items-center flex-wrap animate-fade-up" style={{ animationDelay: "0.32s" }}>
             <Link
               href="#contact"
-              className="bg-primary text-primary-foreground px-8 py-[0.9rem] rounded-lg font-bold text-[0.88rem] tracking-[0.02em] hover:opacity-85 hover:-translate-y-0.5 transition-all duration-200 inline-block"
+              className="bg-primary text-primary-foreground px-8 py-[0.9rem] rounded-lg font-bold text-[0.88rem] tracking-[0.02em] hover:opacity-85 hover:-translate-y-0.5 transition-all duration-200 flex flex-row gap-2 items-center"
             >
-              Start a Project →
+              <SparklesIcon className="w-4" /> Start a Project
             </Link>
             <Link
               href="#services"

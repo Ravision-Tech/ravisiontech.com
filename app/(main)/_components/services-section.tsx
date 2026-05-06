@@ -12,7 +12,7 @@ const ServicesSection = () => {
           Everything your online presence needs.
         </h2>
         <p className="text-muted-foreground text-[0.95rem] leading-[1.75] max-w-[340px] self-end">
-          From concept to launch, we handle the full stack — so you can focus on running your business.
+          From concept to launch, we handle the full stack, so you can focus on running your business.
         </p>
       </div>
 

@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { CirclePlusIcon, MenuIcon } from "lucide-react";
+import { MenuIcon, SparklesIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import MouseTrackedLogo from "./mouse-tracked-logo";
@@ -56,7 +56,7 @@ export const Navbar = () => {
           href="#contact"
           className="bg-primary hidden md:flex flex-row gap-2 items-center text-primary-foreground px-5 py-2 rounded-[6px] font-bold text-[0.78rem] tracking-[0.04em] hover:opacity-85 transition-opacity"
         >
-          <CirclePlusIcon className="w-4 h-4" />
+          <SparklesIcon className="w-4 h-4" />
           Start a Project
         </Link>
         <div className="text-foreground block md:hidden px-2 py-2 rounded-[6px] font-bold text-[0.78rem] tracking-[0.04em] hover:opacity-85 transition-opacity cursor-pointer">

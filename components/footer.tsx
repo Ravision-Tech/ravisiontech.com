@@ -11,12 +11,6 @@ const Footer = () => {
       </span>
       <div className="flex gap-8 items-center list-none">
         <Link
-          href="mailto:dylan@ravisiontech.com"
-          className="font-mono-brand text-[0.65rem] text-dim tracking-[0.05em] hover:text-primary transition-colors duration-200"
-        >
-          Email
-        </Link>
-        <Link
           href="#"
           className="font-mono-brand text-[0.65rem] text-dim tracking-[0.05em] hover:text-primary transition-colors duration-200"
         >

@@ -276,6 +276,12 @@ html {
   }
 }
 
+/* Selection */
+::selection {
+  background-color: var(--brand);
+  color: var(--surface-darkest);
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar {
   width: 5px;
