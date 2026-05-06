@@ -44,7 +44,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        <div className="hidden xl:flex items-center justify-end flex-shrink-0" style={{ width: 500 }}>
+        <div className="hidden min-[835px]:flex items-center justify-end flex-shrink-0 w-[330px] lg:w-[440px] xl:w-[500px]">
           <HeroWindow />
         </div>
       </div>
