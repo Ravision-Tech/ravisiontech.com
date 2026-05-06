@@ -40,7 +40,7 @@ export const Navbar = () => {
       >
         <Link
           href="#"
-          className="text-foreground flex items-center gap-[10px] text-[1rem] font-black tracking-[0.08em] no-underline"
+          className="flex items-center gap-[10px] text-[1rem] font-black tracking-[0.08em] text-foreground no-underline"
         >
           <MouseTrackedLogo />
           <Image
@@ -56,26 +56,26 @@ export const Navbar = () => {
         <div className="flex list-none items-center gap-8">
           <Link
             href="#services"
-            className="text-muted-foreground hover:text-foreground hidden text-[0.82rem] font-medium tracking-[0.02em] transition-colors duration-200 md:block"
+            className="hidden text-[0.82rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground md:block"
           >
             Services
           </Link>
           <Link
             href="#contact"
-            className="text-muted-foreground hover:text-foreground hidden text-[0.82rem] font-medium tracking-[0.02em] transition-colors duration-200 md:block"
+            className="hidden text-[0.82rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground md:block"
           >
             Contact
           </Link>
           <Link
             href="#contact"
-            className="bg-primary text-primary-foreground hidden flex-row items-center gap-2 rounded-[6px] px-5 py-2 text-[0.78rem] font-bold tracking-[0.04em] transition-opacity hover:opacity-85 md:flex"
+            className="hidden flex-row items-center gap-2 rounded-[6px] bg-primary px-5 py-2 text-[0.78rem] font-bold tracking-[0.04em] text-primary-foreground transition-opacity hover:opacity-85 md:flex"
           >
             <SparklesIcon className="h-4 w-4" />
             Start a Project
           </Link>
           <button
             onClick={() => setMobileOpen((prev) => !prev)}
-            className="text-foreground block cursor-pointer rounded-[6px] px-2 py-2 text-[0.78rem] font-bold tracking-[0.04em] transition-opacity hover:opacity-85 md:hidden"
+            className="block cursor-pointer rounded-[6px] px-2 py-2 text-[0.78rem] font-bold tracking-[0.04em] text-foreground transition-opacity hover:opacity-85 md:hidden"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <XIcon /> : <MenuIcon />}
@@ -95,21 +95,21 @@ export const Navbar = () => {
           <Link
             href="#services"
             onClick={() => setMobileOpen(false)}
-            className="text-muted-foreground hover:text-foreground text-[0.9rem] font-medium tracking-[0.02em] transition-colors duration-200"
+            className="text-[0.9rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
             Services
           </Link>
           <Link
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="text-muted-foreground hover:text-foreground text-[0.9rem] font-medium tracking-[0.02em] transition-colors duration-200"
+            className="text-[0.9rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
           >
             Contact
           </Link>
           <Link
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="bg-primary text-primary-foreground flex flex-row items-center justify-center gap-2 rounded-[6px] px-5 py-2.5 text-[0.82rem] font-bold tracking-[0.04em] transition-opacity hover:opacity-85"
+            className="flex flex-row items-center justify-center gap-2 rounded-[6px] bg-primary px-5 py-2.5 text-[0.82rem] font-bold tracking-[0.04em] text-primary-foreground transition-opacity hover:opacity-85"
           >
             <SparklesIcon className="h-4 w-4" />
             Start a Project

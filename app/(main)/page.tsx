@@ -7,7 +7,7 @@ import ServicesSection from "./_components/services-section";
 
 export default function MainPage() {
   return (
-    <div className="bg-background text-foreground min-h-screen overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <div
         aria-hidden
         className="pointer-events-none fixed inset-0 z-0"

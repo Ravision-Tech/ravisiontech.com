@@ -65,8 +65,8 @@ const HeroWindow = () => {
               border: "1px solid var(--border-muted)",
             }}
           >
-            <LockIcon className="text-faint h-2 w-2 opacity-80" />
-            <span className="text-faint truncate select-none" style={{ fontSize: 9, fontFamily: "monospace" }}>
+            <LockIcon className="h-2 w-2 text-faint opacity-80" />
+            <span className="truncate text-faint select-none" style={{ fontSize: 9, fontFamily: "monospace" }}>
               your-business.com
             </span>
           </div>

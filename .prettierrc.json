@@ -13,5 +13,6 @@
   "printWidth": 120,
   "singleQuote": false,
   "tabWidth": 2,
+  "tailwindConfig": "./app/globals.css",
   "trailingComma": "es5"
 }

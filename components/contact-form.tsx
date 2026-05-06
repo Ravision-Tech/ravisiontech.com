@@ -9,7 +9,7 @@ import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recapt
 import { cn } from "@/lib/utils";
 
 const inputClass =
-  "bg-background border border-border text-foreground placeholder-dim px-4 py-[0.85rem] rounded-lg font-sans text-[0.88rem] outline-none focus:border-primary transition-colors duration-200 w-full appearance-none";
+  "bg-background border border-border text-foreground px-4 placeholder-dim py-[0.85rem] rounded-lg font-sans text-[0.88rem] outline-none focus:border-primary transition-colors duration-200 w-full appearance-none";
 
 const labelClass = "font-mono-brand text-[0.65rem] tracking-[0.14em] uppercase text-muted-foreground";
 
@@ -113,7 +113,7 @@ const ContactFormInner = () => {
         <label className={labelClass}>Service Needed</label>
         <div className="relative">
           <select
-            className={cn(inputClass, "pr-10", service === "" && "text-muted-foreground cursor-pointer")}
+            className={cn(inputClass, "pr-10", service === "" && "cursor-pointer text-muted-foreground")}
             value={service}
             onChange={(e) => setService(e.target.value)}
             required
@@ -129,7 +129,7 @@ const ContactFormInner = () => {
             <option>Other</option>
             <option>Not Sure Yet</option>
           </select>
-          <ChevronDownIcon className="text-muted-foreground pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2" />
+          <ChevronDownIcon className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
         </div>
       </div>
 
@@ -145,7 +145,7 @@ const ContactFormInner = () => {
 
       {showV2 && (
         <div className="flex flex-col gap-2">
-          <p className="text-muted-foreground text-[0.8rem]">Please confirm you're human to continue.</p>
+          <p className="text-[0.8rem] text-muted-foreground">Please confirm you're human to continue.</p>
           <ReCAPTCHA ref={recaptchaV2Ref} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_V2_SITE_KEY!} theme="dark" />
         </div>
       )}
@@ -156,7 +156,7 @@ const ContactFormInner = () => {
         className={cn(
           "w-full cursor-pointer rounded-lg border-none px-8 py-4 text-[0.9rem] font-bold tracking-[0.03em] transition-all duration-200",
           sent
-            ? "bg-brand-success text-foreground cursor-not-allowed opacity-100"
+            ? "cursor-not-allowed bg-brand-success text-foreground opacity-100"
             : "bg-primary text-primary-foreground hover:-translate-y-0.5 hover:opacity-85 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
         )}
       >
@@ -178,12 +178,12 @@ const ContactFormInner = () => {
         )}
       </button>
       <div className="flex flex-row items-center justify-center">
-        <p className="text-muted-foreground mb-10 text-[0.95rem] leading-[1.75]">
+        <p className="mb-10 text-[0.95rem] leading-[1.75] text-muted-foreground">
           This form is protected by{" "}
           <Link
             href="https://www.google.com/recaptcha"
             target="_blank"
-            className="hover:text-primary underline underline-offset-4 transition-colors duration-200"
+            className="underline underline-offset-4 transition-colors duration-200 hover:text-primary"
           >
             reCAPTCHA
           </Link>

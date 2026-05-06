@@ -20,7 +20,7 @@ const HeroSection = () => {
           </h1>
 
           <p
-            className="text-muted-foreground animate-fade-up mb-12 max-w-[460px] text-[1.1rem] leading-[1.75] font-normal"
+            className="animate-fade-up mb-12 max-w-[460px] text-[1.1rem] leading-[1.75] font-normal text-muted-foreground"
             style={{ animationDelay: "0.22s" }}
           >
             Ravision Tech designs and develops high-performance websites for businesses that refuse to blend in.
@@ -29,13 +29,13 @@ const HeroSection = () => {
           <div className="animate-fade-up flex flex-wrap items-center gap-4" style={{ animationDelay: "0.32s" }}>
             <Link
               href="#contact"
-              className="bg-primary text-primary-foreground flex flex-row items-center gap-2 rounded-lg px-8 py-[0.9rem] text-[0.88rem] font-bold tracking-[0.02em] transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85"
+              className="flex flex-row items-center gap-2 rounded-lg bg-primary px-8 py-[0.9rem] text-[0.88rem] font-bold tracking-[0.02em] text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85"
             >
               <SparklesIcon className="w-4" /> Start a Project
             </Link>
             <Link
               href="#services"
-              className="text-muted-foreground border-border-bolder hover:border-primary hover:text-primary inline-block rounded-lg border px-8 py-[0.9rem] text-[0.88rem] font-semibold transition-all duration-200"
+              className="inline-block rounded-lg border border-border-bolder px-8 py-[0.9rem] text-[0.88rem] font-semibold text-muted-foreground transition-all duration-200 hover:border-primary hover:text-primary"
             >
               See Services
             </Link>

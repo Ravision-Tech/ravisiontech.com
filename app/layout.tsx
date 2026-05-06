@@ -51,7 +51,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${montserrat.variable} ${jetbrainsMono.variable}`}>
       <head />
-      <body className="bg-surface-body overflow-x-clip">{children}</body>
+      <body className="overflow-x-clip bg-surface-body">{children}</body>
       <GoogleAnalytics gaId="G-LMLYM4Y2FS" />
     </html>
   );
