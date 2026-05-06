@@ -15,8 +15,7 @@ const MouseTrackedLogo = () => {
   const animationFrameRef = useRef<number | undefined>(undefined);
   const targetPosRef = useRef({ x: 0, y: 0 });
   const currentPosRef = useRef({ x: 0, y: 0 });
-  const isTouchDevice =
-    typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
+  const isTouchDevice = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
 
   const updateEyePos = (clientX: number, clientY: number) => {
     const rect = containerRef.current?.getBoundingClientRect();

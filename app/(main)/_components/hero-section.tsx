@@ -1,5 +1,6 @@
 import Link from "next/link";
 
+import { HeroWindow } from "@/components/hero-window";
 import SectionLabel from "@/components/section-label";
 
 const HeroSection = () => {
@@ -39,6 +40,8 @@ const HeroSection = () => {
           See Services
         </Link>
       </div>
+
+      <HeroWindow />
     </section>
   );
 };

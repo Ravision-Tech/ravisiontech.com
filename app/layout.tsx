@@ -3,6 +3,11 @@ import { JetBrains_Mono, Montserrat } from "next/font/google";
 
 import "./globals.css";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
+
+import { Branding } from "@/lib/branding";
+import { DomainURL } from "@/lib/links";
+
 const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-Montserrat",
@@ -12,11 +17,6 @@ const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
 });
-
-import { GoogleAnalytics } from "@next/third-parties/google";
-
-import { Branding } from "@/lib/branding";
-import { DomainURL } from "@/lib/links";
 
 export const metadata: Metadata = {
   metadataBase: new URL(DomainURL),
