@@ -56,7 +56,7 @@ const HeroWindow = () => {
             className="flex-1 flex items-center gap-1.5 px-2.5 mx-2"
             style={{ height: 20, background: "#1a1a1a", borderRadius: 4, border: "1px solid #262626" }}
           >
-            <LockIcon className="w-1.5 h-1.5 opacity-80 text-[#555]" />
+            <LockIcon className="w-2 h-2 opacity-80 text-[#555]" />
             <span className="text-[#555] truncate select-none" style={{ fontSize: 9, fontFamily: "monospace" }}>
               your-business-site.com
             </span>
@@ -116,7 +116,7 @@ const BinaryCanvas = () => {
 
     const draw = () => {
       tickRef.current++;
-      if (tickRef.current % 4 !== 0) {
+      if (tickRef.current % 6 !== 0) {
         frameRef.current = requestAnimationFrame(draw);
         return;
       }
@@ -183,7 +183,7 @@ const WebMockup = () => {
             marginBottom: 10,
           }}
         >
-          <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#6FC0CA" }} />
+          <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#49777D" }} />
           <Skeleton w={38} h={3} r={2} o={0.4} />
         </div>
         <Skeleton w="82%" h={12} r={3} />
