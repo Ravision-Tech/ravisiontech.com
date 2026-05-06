@@ -21,7 +21,10 @@ const ContactSection = () => {
           </p>
           <div className="flex flex-col gap-4">
             <MetaItem icon={MailIcon}>
-              <Link href={`mailto:${Branding.Email}`} className="hover:underline underline-offset-4">
+              <Link
+                href={`mailto:${Branding.Email}`}
+                className="underline underline-offset-4 hover:text-primary transition-colors duration-200"
+              >
                 hello@ravisiontech.com
               </Link>
             </MetaItem>

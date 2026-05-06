@@ -67,7 +67,7 @@ const HeroWindow = () => {
           >
             <LockIcon className="w-2 h-2 opacity-80 text-faint" />
             <span className="text-faint truncate select-none" style={{ fontSize: 9, fontFamily: "monospace" }}>
-              your-business-site.com
+              your-business.com
             </span>
           </div>
         </div>
@@ -250,8 +250,19 @@ const WebMockup = () => {
                 justifyContent: "center",
               }}
             >
-              <div style={{ position: "absolute", inset: 0, borderRadius: 3, background: "var(--brand)", opacity: 0.15 }} />
-              <div style={{ width: 5, height: 5, borderRadius: 2, background: "var(--brand)", opacity: 0.5, position: "relative" }} />
+              <div
+                style={{ position: "absolute", inset: 0, borderRadius: 3, background: "var(--brand)", opacity: 0.15 }}
+              />
+              <div
+                style={{
+                  width: 5,
+                  height: 5,
+                  borderRadius: 2,
+                  background: "var(--brand)",
+                  opacity: 0.5,
+                  position: "relative",
+                }}
+              />
             </div>
             <Skeleton w={[28, 36, 24, 32][i]} h={4.5} r={2} />
             <div style={{ height: 4 }} />
