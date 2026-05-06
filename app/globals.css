@@ -75,6 +75,8 @@
 
 /* Dark Mode */
 :root {
+  --radius: 0.75rem;
+
   /* shadcn tokens */
   --background: #0f0f0f;
   --foreground: #f5f5f5;

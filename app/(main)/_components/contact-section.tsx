@@ -1,8 +1,9 @@
-import { ReactNode } from "react";
-import { MoveRightIcon } from "lucide-react";
+import Link from "next/link";
+import { MailIcon, MapPinIcon } from "lucide-react";
 
 import ContactForm from "@/components/contact-form";
 import SectionLabel from "@/components/section-label";
+import { Branding } from "@/lib/branding";
 
 const ContactSection = () => {
   return (
@@ -16,12 +17,15 @@ const ContactSection = () => {
             <em className="not-italic text-primary">something great.</em>
           </h2>
           <p className="text-muted-foreground text-[0.95rem] leading-[1.75] mb-10">
-            Tell us about your project. We&apos;ll respond within 24 hours with honest advice — not a sales pitch.
+            Tell us about your project. We&apos;ll respond within 48 hours with honest advice — not a sales pitch.
           </p>
           <div className="flex flex-col gap-4">
-            <MetaItem>dylan@ravisiontech.com</MetaItem>
-            <MetaItem>Based in the US — working worldwide</MetaItem>
-            <MetaItem>ravisiontech.com</MetaItem>
+            <MetaItem icon={MailIcon}>
+              <Link href={`mailto:${Branding.Email}`} className="hover:underline underline-offset-4">
+                hello@ravisiontech.com
+              </Link>
+            </MetaItem>
+            <MetaItem icon={MapPinIcon}>Based in the US (working worldwide)</MetaItem>
           </div>
         </div>
 
@@ -31,10 +35,10 @@ const ContactSection = () => {
   );
 };
 
-const MetaItem = ({ children }: { children: ReactNode }) => {
+const MetaItem = ({ icon: Icon, children }: { icon: React.ElementType; children: React.ReactNode }) => {
   return (
     <div className="flex items-center gap-3 font-mono-brand text-[0.75rem] text-muted-foreground">
-      <MoveRightIcon className="text-primary w-4" />
+      <Icon className="text-primary w-4 h-4 shrink-0" />
       {children}
     </div>
   );

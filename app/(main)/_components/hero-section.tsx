@@ -1,15 +1,12 @@
 import Link from "next/link";
 
 import HeroWindow from "@/components/hero-window";
-import SectionLabel from "@/components/section-label";
 
 const HeroSection = () => {
   return (
     <section className="relative z-[1] min-h-screen flex items-center px-12 max-md:px-6 pt-40 pb-24 max-w-[1200px] mx-auto overflow-hidden">
       <div className="flex items-center w-full gap-8">
         <div className="flex flex-col flex-1 min-w-0">
-          <SectionLabel label="Web Development Studio" />
-
           <h1
             className="text-[clamp(3rem,6.5vw,7.5rem)] font-black leading-[0.98] tracking-[-0.04em] mb-8 animate-fade-up"
             style={{ animationDelay: "0.12s" }}
