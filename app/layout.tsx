@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { JetBrains_Mono, Montserrat } from "next/font/google";
+import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
 
@@ -51,7 +52,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning className={`${montserrat.variable} ${jetbrainsMono.variable}`}>
       <head />
-      <body className="overflow-x-clip bg-surface-body">{children}</body>
+      <body className="overflow-x-clip bg-surface-body">
+        <ThemeProvider attribute="class" defaultTheme="dark">
+          {children}
+        </ThemeProvider>
+      </body>
       <GoogleAnalytics gaId="G-LMLYM4Y2FS" />
     </html>
   );

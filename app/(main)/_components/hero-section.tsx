@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { SparklesIcon } from "lucide-react";
 
 import HeroWindow from "@/components/hero-window";
 
@@ -31,7 +30,7 @@ const HeroSection = () => {
               href="#contact"
               className="flex flex-row items-center gap-2 rounded-lg bg-primary px-8 py-[0.9rem] text-[0.88rem] font-bold tracking-[0.02em] text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85"
             >
-              <SparklesIcon className="w-4" /> Start a Project
+              Start a Project
             </Link>
             <Link
               href="#services"

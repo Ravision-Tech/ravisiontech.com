@@ -44,13 +44,22 @@ export const Navbar = () => {
         >
           <MouseTrackedLogo />
           <Image
-            src="/branding/wordmarks/ravision-tech-wordmark-long.svg"
+            src="/branding/wordmarks/ravision-tech-wordmark-long-white.svg"
             alt="The Ravision Tech Logo"
             width={0}
             height={0}
             unoptimized
             priority
-            className="h-4 w-full"
+            className="hidden h-4 w-full dark:block"
+          />
+          <Image
+            src="/branding/wordmarks/ravision-tech-wordmark-long-black.svg"
+            alt="The Ravision Tech Logo"
+            width={0}
+            height={0}
+            unoptimized
+            priority
+            className="block h-4 w-full dark:hidden"
           />
         </Link>
         <div className="flex list-none items-center gap-8">
@@ -70,7 +79,6 @@ export const Navbar = () => {
             href="#contact"
             className="hidden flex-row items-center gap-2 rounded-[6px] bg-primary px-5 py-2 text-[0.78rem] font-bold tracking-[0.04em] text-primary-foreground transition-opacity hover:opacity-85 md:flex"
           >
-            <SparklesIcon className="h-4 w-4" />
             Start a Project
           </Link>
           <button

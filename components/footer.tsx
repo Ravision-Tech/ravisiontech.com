@@ -2,6 +2,7 @@ import Link from "next/link";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
 
 import { GitHubURL, InstagramURL } from "@/lib/links";
+import ThemeToggle from "./theme-toggle";
 
 const Footer = () => {
   return (
@@ -30,6 +31,7 @@ const Footer = () => {
         >
           <SiGithub className="h-4 w-4" />
         </Link>
+        <ThemeToggle />
       </div>
     </footer>
   );
