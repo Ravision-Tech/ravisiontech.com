@@ -11,12 +11,8 @@ const HeroWindow = () => {
 
   return (
     <div
-      className="absolute hidden xl:block"
+      className="relative w-full"
       style={{
-        zIndex: 2,
-        right: -32,
-        top: "50%",
-        transform: "translateY(-52%)",
         animation: "windowFadeIn 0.7s 0.42s ease both",
       }}
     >
@@ -34,7 +30,7 @@ const HeroWindow = () => {
         onMouseEnter={() => setHovered(true)}
         onMouseLeave={() => setHovered(false)}
         style={{
-          width: W,
+          width: "100%",
           borderRadius: 10,
           border: "1px solid #2a2a2a",
           background: "#111",
@@ -67,7 +63,10 @@ const HeroWindow = () => {
           </div>
         </div>
 
-        <div className="relative overflow-hidden" style={{ height: H, borderRadius: "0 0 9px 9px" }}>
+        <div
+          className="relative overflow-hidden"
+          style={{ paddingBottom: `${(H / W) * 100}%`, borderRadius: "0 0 9px 9px" }}
+        >
           <div className="absolute inset-0" style={{ clipPath: `polygon(100% 0%, 100% 100%, 0% 100%)` }}>
             <BinaryCanvas />
           </div>
