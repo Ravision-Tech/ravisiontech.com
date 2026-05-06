@@ -9,7 +9,11 @@ const ServicesSection = () => {
 
       <div className="mb-14 grid grid-cols-2 items-end gap-4 max-md:grid-cols-1">
         <h2 className="text-[clamp(2rem,4vw,3.5rem)] leading-[1.08] font-extrabold tracking-[-0.025em]">
-          Everything your online presence needs.
+          Everything your
+          <br />
+          online presence
+          <br />
+          <em className="text-primary not-italic">needs.</em>
         </h2>
         <p className="max-w-[340px] self-end text-[0.95rem] leading-[1.75] text-muted-foreground">
           From concept to launch, we handle the full stack, so you can focus on running your business.
