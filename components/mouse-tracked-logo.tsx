@@ -97,7 +97,7 @@ const MouseTrackedLogo = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-10 h-10"
+      className="relative h-10 w-10"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
@@ -108,7 +108,7 @@ const MouseTrackedLogo = () => {
         unoptimized
         priority
         alt={`A part of the logo for ${Branding.Name}`}
-        className="absolute inset-0 w-10 h-full select-none"
+        className="absolute inset-0 h-full w-10 select-none"
         draggable={false}
       />
       <Image
@@ -121,7 +121,7 @@ const MouseTrackedLogo = () => {
           transform: `translate(${eyePos.x}px, ${eyePos.y}px)`,
           willChange: "transform",
         }}
-        className="absolute inset-0 w-10 h-full select-none"
+        className="absolute inset-0 h-full w-10 select-none"
         draggable={false}
       />
       <Image
@@ -130,7 +130,7 @@ const MouseTrackedLogo = () => {
         unoptimized
         priority
         alt={`A part of the logo for ${Branding.Name}`}
-        className="absolute inset-0 w-10 h-full select-none"
+        className="absolute inset-0 h-full w-10 select-none"
         draggable={false}
       />
     </div>

@@ -15,23 +15,23 @@ const ServiceCard = ({ service, num, className }: ServiceCardProps) => {
   return (
     <div
       className={cn(
-        "group bg-background p-10 hover:bg-muted transition-colors duration-[250ms] relative flex flex-col h-full",
+        "group bg-background hover:bg-muted relative flex h-full flex-col p-10 transition-colors duration-[250ms]",
         className
       )}
     >
-      <div className="font-mono-brand text-[0.65rem] text-dim group-hover:text-muted-foreground tracking-[0.1em] mb-6 select-none transition-colors duration-[250ms]">
+      <div className="font-mono-brand text-dim group-hover:text-muted-foreground mb-6 text-[0.65rem] tracking-[0.1em] transition-colors duration-[250ms] select-none">
         {num.toString().padStart(2, "0")} / {SERVICES.length.toString().padStart(2, "0")}
       </div>
-      <div className="w-[42px] h-[42px] bg-[var(--brand-glow-md)] rounded-[10px] flex items-center justify-center mb-6">
-        <ServiceIconComponent className="w-5 h-5" />
+      <div className="mb-6 flex h-[42px] w-[42px] items-center justify-center rounded-[10px] bg-[var(--brand-glow-md)]">
+        <ServiceIconComponent className="h-5 w-5" />
       </div>
-      <h3 className="text-[1.15rem] font-bold mb-3 tracking-[-0.01em] text-foreground">{service.name}</h3>
+      <h3 className="text-foreground mb-3 text-[1.15rem] font-bold tracking-[-0.01em]">{service.name}</h3>
       <p className="text-muted-foreground text-[0.88rem] leading-[1.72]">{service.desc}</p>
-      <div className="flex flex-wrap gap-[0.45rem] mt-auto pt-6 select-none">
+      <div className="mt-auto flex flex-wrap gap-[0.45rem] pt-6 select-none">
         {service.tags.map((tag) => (
           <span
             key={tag}
-            className="font-mono-brand text-[0.62rem] tracking-[0.07em] text-dim group-hover:text-muted-foreground border border-border group-hover:border-dim px-[0.6rem] py-[0.28rem] rounded uppercase transition-colors duration-[250ms]"
+            className="font-mono-brand text-dim group-hover:text-muted-foreground border-border group-hover:border-dim rounded border px-[0.6rem] py-[0.28rem] text-[0.62rem] tracking-[0.07em] uppercase transition-colors duration-[250ms]"
           >
             {tag}
           </span>

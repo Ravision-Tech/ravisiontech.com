@@ -22,7 +22,7 @@ const HeroWindow = () => {
     >
       <style>{`@keyframes windowFadeIn { from { opacity: 0; } to { opacity: 1; } }`}</style>
       <div
-        className="absolute -inset-6 pointer-events-none"
+        className="pointer-events-none absolute -inset-6"
         style={{
           background: "radial-gradient(ellipse at center, var(--brand-glow-sm) 0%, transparent 65%)",
           opacity: hovered ? 1 : 0.6,
@@ -51,13 +51,13 @@ const HeroWindow = () => {
           className="flex items-center gap-2 px-3.5"
           style={{ height: 36, borderBottom: "1px solid var(--border-subtle)", borderRadius: "10px 10px 0 0" }}
         >
-          <div className="flex gap-1.5 shrink-0">
-            <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--dot-red)" }} />
-            <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--dot-yellow)" }} />
-            <div className="w-2.5 h-2.5 rounded-full" style={{ background: "var(--dot-green)" }} />
+          <div className="flex shrink-0 gap-1.5">
+            <div className="h-2.5 w-2.5 rounded-full" style={{ background: "var(--dot-red)" }} />
+            <div className="h-2.5 w-2.5 rounded-full" style={{ background: "var(--dot-yellow)" }} />
+            <div className="h-2.5 w-2.5 rounded-full" style={{ background: "var(--dot-green)" }} />
           </div>
           <div
-            className="flex-1 flex items-center gap-1.5 px-2.5 mx-2"
+            className="mx-2 flex flex-1 items-center gap-1.5 px-2.5"
             style={{
               height: 20,
               background: "var(--surface-elevated)",
@@ -65,7 +65,7 @@ const HeroWindow = () => {
               border: "1px solid var(--border-muted)",
             }}
           >
-            <LockIcon className="w-2 h-2 opacity-80 text-faint" />
+            <LockIcon className="text-faint h-2 w-2 opacity-80" />
             <span className="text-faint truncate select-none" style={{ fontSize: 9, fontFamily: "monospace" }}>
               your-business.com
             </span>
@@ -85,7 +85,7 @@ const HeroWindow = () => {
           </div>
 
           <svg
-            className="absolute inset-0 w-full h-full pointer-events-none"
+            className="pointer-events-none absolute inset-0 h-full w-full"
             viewBox={`0 0 ${W} ${H}`}
             preserveAspectRatio="none"
           >
@@ -157,7 +157,7 @@ const BinaryCanvas = () => {
     };
   }, []);
 
-  return <canvas ref={canvasRef} width={W} height={H} className="absolute inset-0 w-full h-full" />;
+  return <canvas ref={canvasRef} width={W} height={H} className="absolute inset-0 h-full w-full" />;
 };
 
 const Skeleton = ({ w, h = 5, r = 3, o = 1 }: { w: number | string; h?: number; r?: number; o?: number }) => {
@@ -187,7 +187,7 @@ const WebMockup = () => {
           />
           <Skeleton w={30} h={4} />
         </div>
-        <div className="flex gap-3 items-center">
+        <div className="flex items-center gap-3">
           <Skeleton w={18} h={3.5} o={0.5} />
           <Skeleton w={22} h={3.5} o={0.5} />
           <Skeleton w={16} h={3.5} o={0.5} />
@@ -219,7 +219,7 @@ const WebMockup = () => {
         <Skeleton w="90%" h={3.5} o={0.25} />
         <div style={{ height: 3 }} />
         <Skeleton w="72%" h={3.5} o={0.25} />
-        <div className="flex gap-2 mt-4">
+        <div className="mt-4 flex gap-2">
           <Skeleton w={56} h={18} r={5} />
           <Skeleton w={44} h={18} r={5} o={0.35} />
         </div>

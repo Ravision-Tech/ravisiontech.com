@@ -34,13 +34,13 @@ export const Navbar = () => {
     <div ref={navRef}>
       <nav
         className={cn(
-          "fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-12 max-md:px-6 h-16 backdrop-blur-[16px] border-b transition-all duration-300",
-          scrolled ? "bg-[var(--navbar-bg-scrolled)] border-border-scrolled" : "bg-[var(--navbar-bg)] border-border"
+          "fixed top-0 right-0 left-0 z-[100] flex h-16 items-center justify-between border-b px-12 backdrop-blur-[16px] transition-all duration-300 max-md:px-6",
+          scrolled ? "border-border-scrolled bg-[var(--navbar-bg-scrolled)]" : "border-border bg-[var(--navbar-bg)]"
         )}
       >
         <Link
           href="#"
-          className="font-black text-[1rem] tracking-[0.08em] text-foreground flex items-center gap-[10px] no-underline"
+          className="text-foreground flex items-center gap-[10px] text-[1rem] font-black tracking-[0.08em] no-underline"
         >
           <MouseTrackedLogo />
           <Image
@@ -53,29 +53,29 @@ export const Navbar = () => {
             className="h-4 w-full"
           />
         </Link>
-        <div className="flex items-center gap-8 list-none">
+        <div className="flex list-none items-center gap-8">
           <Link
             href="#services"
-            className="text-muted-foreground hidden md:block text-[0.82rem] font-medium tracking-[0.02em] hover:text-foreground transition-colors duration-200"
+            className="text-muted-foreground hover:text-foreground hidden text-[0.82rem] font-medium tracking-[0.02em] transition-colors duration-200 md:block"
           >
             Services
           </Link>
           <Link
             href="#contact"
-            className="text-muted-foreground hidden md:block text-[0.82rem] font-medium tracking-[0.02em] hover:text-foreground transition-colors duration-200"
+            className="text-muted-foreground hover:text-foreground hidden text-[0.82rem] font-medium tracking-[0.02em] transition-colors duration-200 md:block"
           >
             Contact
           </Link>
           <Link
             href="#contact"
-            className="bg-primary hidden md:flex flex-row gap-2 items-center text-primary-foreground px-5 py-2 rounded-[6px] font-bold text-[0.78rem] tracking-[0.04em] hover:opacity-85 transition-opacity"
+            className="bg-primary text-primary-foreground hidden flex-row items-center gap-2 rounded-[6px] px-5 py-2 text-[0.78rem] font-bold tracking-[0.04em] transition-opacity hover:opacity-85 md:flex"
           >
-            <SparklesIcon className="w-4 h-4" />
+            <SparklesIcon className="h-4 w-4" />
             Start a Project
           </Link>
           <button
             onClick={() => setMobileOpen((prev) => !prev)}
-            className="text-foreground block md:hidden px-2 py-2 rounded-[6px] font-bold text-[0.78rem] tracking-[0.04em] hover:opacity-85 transition-opacity cursor-pointer"
+            className="text-foreground block cursor-pointer rounded-[6px] px-2 py-2 text-[0.78rem] font-bold tracking-[0.04em] transition-opacity hover:opacity-85 md:hidden"
             aria-label="Toggle menu"
           >
             {mobileOpen ? <XIcon /> : <MenuIcon />}
@@ -86,32 +86,32 @@ export const Navbar = () => {
       {/* Mobile dropdown */}
       <div
         className={cn(
-          "fixed top-16 left-0 right-0 z-[99] md:hidden backdrop-blur-[16px] border-b transition-all duration-300 overflow-hidden",
-          scrolled ? "bg-[var(--navbar-bg-scrolled)] border-border-scrolled" : "bg-[var(--navbar-bg)] border-border",
-          mobileOpen ? "max-h-64 opacity-100" : "max-h-0 opacity-0 pointer-events-none"
+          "fixed top-16 right-0 left-0 z-[99] overflow-hidden border-b backdrop-blur-[16px] transition-all duration-300 md:hidden",
+          scrolled ? "border-border-scrolled bg-[var(--navbar-bg-scrolled)]" : "border-border bg-[var(--navbar-bg)]",
+          mobileOpen ? "max-h-64 opacity-100" : "pointer-events-none max-h-0 opacity-0"
         )}
       >
-        <div className="flex flex-col px-6 py-4 gap-4">
+        <div className="flex flex-col gap-4 px-6 py-4">
           <Link
             href="#services"
             onClick={() => setMobileOpen(false)}
-            className="text-muted-foreground text-[0.9rem] font-medium tracking-[0.02em] hover:text-foreground transition-colors duration-200"
+            className="text-muted-foreground hover:text-foreground text-[0.9rem] font-medium tracking-[0.02em] transition-colors duration-200"
           >
             Services
           </Link>
           <Link
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="text-muted-foreground text-[0.9rem] font-medium tracking-[0.02em] hover:text-foreground transition-colors duration-200"
+            className="text-muted-foreground hover:text-foreground text-[0.9rem] font-medium tracking-[0.02em] transition-colors duration-200"
           >
             Contact
           </Link>
           <Link
             href="#contact"
             onClick={() => setMobileOpen(false)}
-            className="bg-primary flex flex-row gap-2 items-center justify-center text-primary-foreground px-5 py-2.5 rounded-[6px] font-bold text-[0.82rem] tracking-[0.04em] hover:opacity-85 transition-opacity"
+            className="bg-primary text-primary-foreground flex flex-row items-center justify-center gap-2 rounded-[6px] px-5 py-2.5 text-[0.82rem] font-bold tracking-[0.04em] transition-opacity hover:opacity-85"
           >
-            <SparklesIcon className="w-4 h-4" />
+            <SparklesIcon className="h-4 w-4" />
             Start a Project
           </Link>
         </div>

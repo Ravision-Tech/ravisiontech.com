@@ -10,7 +10,7 @@ export default function MainPage() {
     <div className="bg-background text-foreground min-h-screen overflow-x-hidden">
       <div
         aria-hidden
-        className="fixed inset-0 pointer-events-none z-0"
+        className="pointer-events-none fixed inset-0 z-0"
         style={{
           backgroundImage:
             "linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)",

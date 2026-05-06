@@ -4,7 +4,7 @@ interface SectionLabelProps {
 
 const SectionLabel = ({ label }: SectionLabelProps) => {
   return (
-    <div className="flex items-center gap-2 font-mono-brand text-[1rem] tracking-[0.22em] text-dim uppercase mb-12 font-bold">
+    <div className="font-mono-brand text-dim mb-12 flex items-center gap-2 text-[1rem] font-bold tracking-[0.22em] uppercase">
       {/* <span className="text-primary">{"//"}</span> */}
       {/* <span className="text-primary">{label}</span> */}
       <span className="text-primary">{label}</span>

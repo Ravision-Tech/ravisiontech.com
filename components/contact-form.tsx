@@ -93,7 +93,7 @@ const ContactFormInner = () => {
 
   return (
     <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
-      <div className="grid grid-cols-2 max-sm:grid-cols-1 gap-4">
+      <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
         <div className="flex flex-col gap-[0.45rem]">
           <label className={labelClass}>First Name</label>
           <input className={inputClass} type="text" name="firstName" placeholder="John" required />
@@ -129,14 +129,14 @@ const ContactFormInner = () => {
             <option>Other</option>
             <option>Not Sure Yet</option>
           </select>
-          <ChevronDownIcon className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+          <ChevronDownIcon className="text-muted-foreground pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2" />
         </div>
       </div>
 
       <div className="flex flex-col gap-[0.45rem]">
         <label className={labelClass}>Project Details</label>
         <textarea
-          className={cn(inputClass, "resize-y min-h-[120px]")}
+          className={cn(inputClass, "min-h-[120px] resize-y")}
           name="details"
           placeholder="Tell us about your project, goals, timeline, budget..."
           required
@@ -154,36 +154,36 @@ const ContactFormInner = () => {
         type="submit"
         disabled={sent || loading}
         className={cn(
-          "w-full py-4 px-8 rounded-lg font-bold text-[0.9rem] tracking-[0.03em] transition-all duration-200 cursor-pointer border-none",
+          "w-full cursor-pointer rounded-lg border-none px-8 py-4 text-[0.9rem] font-bold tracking-[0.03em] transition-all duration-200",
           sent
             ? "bg-brand-success text-foreground cursor-not-allowed opacity-100"
-            : "bg-primary text-primary-foreground hover:opacity-85 hover:-translate-y-0.5 disabled:opacity-60 disabled:translate-y-0 disabled:cursor-not-allowed"
+            : "bg-primary text-primary-foreground hover:-translate-y-0.5 hover:opacity-85 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
         )}
       >
         {sent ? (
-          <span className="flex flex-row gap-2 items-center justify-center">
+          <span className="flex flex-row items-center justify-center gap-2">
             Message Sent!
             <SparklesIcon className="w-4" />
           </span>
         ) : loading ? (
-          <span className="flex flex-row gap-2 items-center justify-center">
+          <span className="flex flex-row items-center justify-center gap-2">
             Sending...
             <Loader2Icon className="w-4 animate-spin" />
           </span>
         ) : (
-          <span className="flex flex-row gap-2 items-center justify-center">
+          <span className="flex flex-row items-center justify-center gap-2">
             Send Message
             <SendHorizonalIcon className="w-4" />
           </span>
         )}
       </button>
       <div className="flex flex-row items-center justify-center">
-        <p className="text-muted-foreground text-[0.95rem] leading-[1.75] mb-10">
+        <p className="text-muted-foreground mb-10 text-[0.95rem] leading-[1.75]">
           This form is protected by{" "}
           <Link
             href="https://www.google.com/recaptcha"
             target="_blank"
-            className="underline underline-offset-4 hover:text-primary transition-colors duration-200"
+            className="hover:text-primary underline underline-offset-4 transition-colors duration-200"
           >
             reCAPTCHA
           </Link>
