@@ -1,6 +1,7 @@
 "use client";
 
 import { useRef, useState } from "react";
+import { ChevronDownIcon, Loader2Icon, SendHorizonalIcon, SparklesIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 
@@ -12,6 +13,7 @@ const labelClass = "font-mono-brand text-[0.65rem] tracking-[0.14em] uppercase t
 const ContactForm = () => {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [service, setService] = useState("");
   const formRef = useRef<HTMLFormElement>(null);
 
   function handleSubmit(e: React.FormEvent) {
@@ -20,9 +22,10 @@ const ContactForm = () => {
     setTimeout(() => {
       setSent(true);
       setLoading(false);
+      setService("");
+      formRef.current?.reset();
       setTimeout(() => {
         setSent(false);
-        formRef.current?.reset();
       }, 3500);
     }, 400);
   }
@@ -47,15 +50,26 @@ const ContactForm = () => {
 
       <div className="flex flex-col gap-[0.45rem]">
         <label className={labelClass}>Service Needed</label>
-        <select className={inputClass}>
-          <option value="">What do you need?</option>
-          <option>Web Design</option>
-          <option>Web Development</option>
-          <option>E-Commerce</option>
-          <option>SEO &amp; Performance</option>
-          <option>Full Package</option>
-          <option>Not Sure Yet</option>
-        </select>
+        <div className="relative">
+          <select
+            className={cn(inputClass, "pr-10", service === "" && "text-muted-foreground cursor-pointer")}
+            value={service}
+            onChange={(e) => setService(e.target.value)}
+            required
+          >
+            <option value="" disabled hidden>
+              What do you need?
+            </option>
+            <option>Web Development</option>
+            <option>Web Design</option>
+            <option>E-Commerce</option>
+            <option>SEO &amp; Performance</option>
+            <option>Full Package</option>
+            <option>Other</option>
+            <option>Not Sure Yet</option>
+          </select>
+          <ChevronDownIcon className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+        </div>
       </div>
 
       <div className="flex flex-col gap-[0.45rem]">
@@ -63,6 +77,7 @@ const ContactForm = () => {
         <textarea
           className={cn(inputClass, "resize-y min-h-[120px]")}
           placeholder="Tell us about your project, goals, timeline, budget..."
+          required
         />
       </div>
 
@@ -76,7 +91,22 @@ const ContactForm = () => {
             : "bg-primary text-primary-foreground hover:opacity-85 hover:-translate-y-0.5 disabled:opacity-60 disabled:translate-y-0 disabled:cursor-not-allowed"
         )}
       >
-        {sent ? "Message Sent ✓" : loading ? "Sending..." : "Send Message →"}
+        {sent ? (
+          <span className="flex flex-row gap-2 items-center justify-center">
+            Message Sent!
+            <SparklesIcon className="w-4" />
+          </span>
+        ) : loading ? (
+          <span className="flex flex-row gap-2 items-center justify-center">
+            Sending...
+            <Loader2Icon className="w-4 animate-spin" />
+          </span>
+        ) : (
+          <span className="flex flex-row gap-2 items-center justify-center">
+            Send Message
+            <SendHorizonalIcon className="w-4" />
+          </span>
+        )}
       </button>
     </form>
   );

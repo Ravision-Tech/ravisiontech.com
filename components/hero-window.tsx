@@ -207,7 +207,7 @@ const WebMockup = () => {
             marginBottom: 10,
           }}
         >
-          <div style={{ width: 4, height: 4, borderRadius: "50%", background: "var(--brand)" }} />
+          <div style={{ width: 4, height: 4, borderRadius: "50%", background: "var(--brand)", opacity: 0.5 }} />
           <Skeleton w={38} h={3} r={2} o={0.4} />
         </div>
         <Skeleton w="82%" h={12} r={3} />
@@ -243,24 +243,16 @@ const WebMockup = () => {
                 width: 10,
                 height: 10,
                 borderRadius: 3,
-                background: "var(--brand)",
-                opacity: 0.15,
-                marginBottom: 5,
-              }}
-            />
-            <div
-              style={{
-                width: 5,
-                height: 5,
-                borderRadius: 2,
-                background: "var(--brand)",
-                opacity: 0.5,
                 position: "relative",
-                top: -14,
-                left: 2.5,
-                marginBottom: -8,
+                marginBottom: 5,
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
               }}
-            />
+            >
+              <div style={{ position: "absolute", inset: 0, borderRadius: 3, background: "var(--brand)", opacity: 0.15 }} />
+              <div style={{ width: 5, height: 5, borderRadius: 2, background: "var(--brand)", opacity: 0.5, position: "relative" }} />
+            </div>
             <Skeleton w={[28, 36, 24, 32][i]} h={4.5} r={2} />
             <div style={{ height: 4 }} />
             <Skeleton w="90%" h={3} o={0.3} />
