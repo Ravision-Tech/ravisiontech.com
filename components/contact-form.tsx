@@ -5,9 +5,9 @@ import { useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 
 const inputClass =
-  "bg-[#0f0f0f] border border-[#222] text-[#f5f5f5] placeholder-[#3d3d3d] px-4 py-[0.85rem] rounded-lg font-sans text-[0.88rem] outline-none focus:border-[#6FC0CA] transition-colors duration-200 w-full appearance-none";
+  "bg-background border border-border text-foreground placeholder-dim px-4 py-[0.85rem] rounded-lg font-sans text-[0.88rem] outline-none focus:border-primary transition-colors duration-200 w-full appearance-none";
 
-const labelClass = "font-mono-brand text-[0.65rem] tracking-[0.14em] uppercase text-[#7a7a7a]";
+const labelClass = "font-mono-brand text-[0.65rem] tracking-[0.14em] uppercase text-muted-foreground";
 
 const ContactForm = () => {
   const [sent, setSent] = useState(false);
@@ -72,8 +72,8 @@ const ContactForm = () => {
         className={cn(
           "mt-[0.4rem] w-full py-4 px-8 rounded-lg font-bold text-[0.9rem] tracking-[0.03em] transition-all duration-200 cursor-pointer border-none",
           sent
-            ? "bg-[#1a5c45] text-[#f5f5f5] cursor-not-allowed opacity-100"
-            : "bg-[#6FC0CA] text-[#0a0a0a] hover:opacity-85 hover:-translate-y-0.5 disabled:opacity-60 disabled:translate-y-0 disabled:cursor-not-allowed"
+            ? "bg-brand-success text-foreground cursor-not-allowed opacity-100"
+            : "bg-primary text-primary-foreground hover:opacity-85 hover:-translate-y-0.5 disabled:opacity-60 disabled:translate-y-0 disabled:cursor-not-allowed"
         )}
       >
         {sent ? "Message Sent ✓" : loading ? "Sending..." : "Send Message →"}

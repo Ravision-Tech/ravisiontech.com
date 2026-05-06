@@ -11,12 +11,12 @@ const ServicesSection = () => {
         <h2 className="text-[clamp(2rem,4vw,3.5rem)] font-extrabold tracking-[-0.025em] leading-[1.08]">
           Everything your online presence needs.
         </h2>
-        <p className="text-[#7a7a7a] text-[0.95rem] leading-[1.75] max-w-[340px] self-end">
+        <p className="text-muted-foreground text-[0.95rem] leading-[1.75] max-w-[340px] self-end">
           From concept to launch, we handle the full stack — so you can focus on running your business.
         </p>
       </div>
 
-      <div className="grid grid-cols-2 max-md:grid-cols-1 gap-px bg-[#222] border border-[#222] rounded-[14px] overflow-hidden">
+      <div className="grid grid-cols-2 max-md:grid-cols-1 gap-px bg-border border border-border rounded-[14px] overflow-hidden">
         {SERVICES.map((service, i) => (
           <ServiceCard key={i + 1} num={i + 1} service={service} />
         ))}

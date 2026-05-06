@@ -7,13 +7,13 @@ import ServicesSection from "./_components/services-section";
 
 export default function MainPage() {
   return (
-    <div className="bg-[#0f0f0f] text-[#f5f5f5] min-h-screen overflow-x-hidden">
+    <div className="bg-background text-foreground min-h-screen overflow-x-hidden">
       <div
         aria-hidden
         className="fixed inset-0 pointer-events-none z-0"
         style={{
           backgroundImage:
-            "linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px)",
+            "linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)",
           backgroundSize: "64px 64px",
         }}
       />
