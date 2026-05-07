@@ -3,7 +3,6 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MenuIcon, XIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import MouseTrackedLogo from "./mouse-tracked-logo";
@@ -84,10 +83,29 @@ export const Navbar = () => {
           </Link>
           <button
             onClick={() => setMobileOpen((prev) => !prev)}
-            className="block cursor-pointer rounded-[6px] px-2 py-2 text-[0.78rem] font-bold tracking-[0.04em] text-foreground transition-opacity hover:opacity-85 md:hidden"
+            className="block cursor-pointer rounded-[6px] p-2 text-foreground transition-opacity hover:opacity-85 md:hidden"
             aria-label="Toggle menu"
           >
-            {mobileOpen ? <XIcon /> : <MenuIcon />}
+            <div className="relative flex h-5 w-5 items-center justify-center">
+              <span
+                className={cn(
+                  "absolute h-[2px] w-5 rounded-full bg-current transition-all duration-300 ease-in-out",
+                  mobileOpen ? "rotate-45" : "-translate-y-1.5"
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute h-[2px] w-5 rounded-full bg-current transition-all duration-300 ease-in-out",
+                  mobileOpen ? "opacity-0" : "opacity-100"
+                )}
+              />
+              <span
+                className={cn(
+                  "absolute h-[2px] w-5 rounded-full bg-current transition-all duration-300 ease-in-out",
+                  mobileOpen ? "-rotate-45" : "translate-y-1.5"
+                )}
+              />
+            </div>
           </button>
         </div>
       </nav>

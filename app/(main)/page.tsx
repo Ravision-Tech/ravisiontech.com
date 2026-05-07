@@ -15,6 +15,7 @@ const MainPage = () => {
           backgroundImage:
             "linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)",
           backgroundSize: "64px 64px",
+          backgroundPosition: "center center",
         }}
       />
 
