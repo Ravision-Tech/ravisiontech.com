@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { MenuIcon, SparklesIcon, XIcon } from "lucide-react";
+import { MenuIcon, XIcon } from "lucide-react";
 
 import { cn } from "@/lib/utils";
 import MouseTrackedLogo from "./mouse-tracked-logo";
@@ -34,7 +34,7 @@ export const Navbar = () => {
     <div ref={navRef}>
       <nav
         className={cn(
-          "fixed top-0 right-0 left-0 z-[100] flex h-16 items-center justify-between border-b px-12 backdrop-blur-[16px] transition-all duration-300 max-md:px-6",
+          "fixed top-0 right-0 left-0 z-[100] flex h-16 items-center justify-between border-b px-12 backdrop-blur-sm transition-all duration-300 max-md:px-6",
           scrolled ? "border-border-scrolled bg-[var(--navbar-bg-scrolled)]" : "border-border bg-[var(--navbar-bg)]"
         )}
       >
@@ -94,34 +94,40 @@ export const Navbar = () => {
       {/* Mobile dropdown */}
       <div
         className={cn(
-          "fixed top-16 right-0 left-0 z-[99] overflow-hidden border-b backdrop-blur-[16px] transition-all duration-300 md:hidden",
-          scrolled ? "border-border-scrolled bg-[var(--navbar-bg-scrolled)]" : "border-border bg-[var(--navbar-bg)]",
-          mobileOpen ? "max-h-64 opacity-100" : "pointer-events-none max-h-0 opacity-0"
+          "fixed top-16 right-0 left-0 z-[99] overflow-hidden md:hidden",
+          !mobileOpen && "pointer-events-none"
         )}
       >
-        <div className="flex flex-col gap-4 px-6 py-4">
-          <Link
-            href="#services"
-            onClick={() => setMobileOpen(false)}
-            className="text-[0.9rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
-          >
-            Services
-          </Link>
-          <Link
-            href="#contact"
-            onClick={() => setMobileOpen(false)}
-            className="text-[0.9rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
-          >
-            Contact
-          </Link>
-          <Link
-            href="#contact"
-            onClick={() => setMobileOpen(false)}
-            className="flex flex-row items-center justify-center gap-2 rounded-[6px] bg-primary px-5 py-2.5 text-[0.82rem] font-bold tracking-[0.04em] text-primary-foreground transition-opacity hover:opacity-85"
-          >
-            <SparklesIcon className="h-4 w-4" />
-            Start a Project
-          </Link>
+        <div
+          className={cn(
+            "border-b backdrop-blur-[16px] transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
+            scrolled ? "border-border-scrolled bg-[var(--navbar-bg-scrolled)]" : "border-border bg-[var(--navbar-bg)]",
+            mobileOpen ? "translate-y-0" : "-translate-y-full"
+          )}
+        >
+          <div className="flex flex-col items-center gap-4 px-6 py-4">
+            <Link
+              href="#services"
+              onClick={() => setMobileOpen(false)}
+              className="text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
+            >
+              Services
+            </Link>
+            <Link
+              href="#contact"
+              onClick={() => setMobileOpen(false)}
+              className="text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
+            >
+              Contact
+            </Link>
+            <Link
+              href="#contact"
+              onClick={() => setMobileOpen(false)}
+              className="flex w-full flex-row items-center justify-center gap-2 rounded-[6px] bg-primary px-5 py-2.5 text-[1.2rem] font-bold tracking-[0.04em] text-primary-foreground transition-opacity hover:opacity-85"
+            >
+              Start a Project
+            </Link>
+          </div>
         </div>
       </div>
     </div>
