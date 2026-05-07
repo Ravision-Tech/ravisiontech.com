@@ -20,14 +20,14 @@ const ServiceCard = ({ service, num, className }: ServiceCardProps) => {
       )}
     >
       <div className="pointer-events-none absolute -top-8 -right-8 select-none">
-        <ServiceIconComponent className="h-44 w-44 [mask-image:linear-gradient(to_top_right,rgba(0,0,0,0.25)_0%,black_65%)] stroke-2 text-foreground opacity-[0.13] transition-opacity duration-[250ms] group-hover:opacity-[0.2]" />
+        <ServiceIconComponent className="h-44 w-44 [mask-image:linear-gradient(to_top_right,rgba(0,0,0,0.25)_0%,black_65%)] stroke-2 text-primary opacity-[0.35] transition-opacity duration-[250ms] group-hover:opacity-[0.48] dark:opacity-[0.18] dark:group-hover:opacity-[0.28]" />
       </div>
 
       <div className="font-mono-brand mb-6 text-[0.65rem] tracking-[0.1em] text-dim transition-colors duration-[250ms] select-none group-hover:text-muted-foreground">
         {num.toString().padStart(2, "0")} / {SERVICES.length.toString().padStart(2, "0")}
       </div>
       <h3 className="mb-3 text-[1.15rem] font-bold tracking-[-0.01em] text-foreground">{service.name}</h3>
-      <p className="text-[0.88rem] leading-[1.72] text-muted-foreground">{service.desc}</p>
+      <p className="mr-20 text-[0.88rem] leading-[1.72] text-muted-foreground">{service.desc}</p>
       <div className="mt-auto flex flex-wrap gap-[0.45rem] pt-6 select-none">
         {service.tags.map((tag) => (
           <span

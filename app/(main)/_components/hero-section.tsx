@@ -4,7 +4,7 @@ import HeroWindow from "@/components/hero-window";
 
 const HeroSection = () => {
   return (
-    <section className="relative z-[1] mx-auto flex min-h-screen max-w-[1200px] items-center overflow-hidden px-12 pt-40 pb-24 max-md:px-6">
+    <section className="relative z-[1] mx-auto flex min-h-screen max-w-[1200px] items-center px-12 pt-40 pb-24 max-md:px-6">
       <div className="flex w-full items-center gap-8">
         <div className="flex min-w-0 flex-1 flex-col">
           <h1

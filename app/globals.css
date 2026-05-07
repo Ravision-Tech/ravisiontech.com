@@ -150,6 +150,8 @@
   --navbar-bg-scrolled: rgba(15, 15, 15, 0.96);
   --canvas-fade: rgba(9, 12, 12, 0.15);
   --grid-line: rgba(255, 255, 255, 0.025);
+  --window-shadow: rgba(0, 0, 0, 0.65);
+  --window-shadow-hover: rgba(0, 0, 0, 0.75);
 }
 
 /* Light Mode */
@@ -228,6 +230,8 @@
   --navbar-bg-scrolled: rgba(255, 255, 255, 0.96);
   --canvas-fade: rgba(250, 250, 250, 0.15);
   --grid-line: rgba(0, 0, 0, 0.04);
+  --window-shadow: rgba(0, 0, 0, 0.1);
+  --window-shadow-hover: rgba(0, 0, 0, 0.16);
 }
 
 @layer base {

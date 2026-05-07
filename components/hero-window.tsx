@@ -39,8 +39,8 @@ const HeroWindow = () => {
           border: "1px solid var(--border-strong)",
           background: "var(--surface-window)",
           boxShadow: hovered
-            ? "0 48px 96px rgba(0,0,0,0.75), 0 0 0 1px var(--border-bolder), 0 0 50px var(--brand-glow)"
-            : "0 32px 72px rgba(0,0,0,0.65), 0 0 0 1px var(--border-subtle)",
+            ? "0 48px 96px var(--window-shadow-hover), 0 0 0 1px var(--border-bolder), 0 0 50px var(--brand-glow)"
+            : "0 32px 72px var(--window-shadow), 0 0 0 1px var(--border-subtle)",
           transform: hovered ? "rotate(2deg) scale(1.02)" : "rotate(3deg)",
           transition: "transform 0.45s cubic-bezier(0.34,1.56,0.64,1), box-shadow 0.4s ease",
           cursor: "default",
