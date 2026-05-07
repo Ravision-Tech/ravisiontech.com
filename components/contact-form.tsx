@@ -17,6 +17,7 @@ const labelClass = "font-mono-brand text-[0.65rem] tracking-[0.14em] uppercase t
 const ContactFormInner = () => {
   const [sent, setSent] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [service, setService] = useState("");
   const [showV2, setShowV2] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
@@ -63,17 +64,19 @@ const ContactFormInner = () => {
     e.preventDefault();
     if (!executeRecaptcha) return;
 
+    setError(null);
+
     if (showV2) {
       const v2Token = recaptchaV2Ref.current?.getValue();
       if (!v2Token) {
-        alert("Please complete the CAPTCHA.");
+        setError("Please complete the CAPTCHA.");
         return;
       }
       setLoading(true);
       try {
         await submit(v2Token, "v2");
       } catch {
-        alert("Something went wrong. Please try again.");
+        setError("Something went wrong. Please try again.");
         recaptchaV2Ref.current?.reset();
       } finally {
         setLoading(false);
@@ -86,7 +89,7 @@ const ContactFormInner = () => {
       const v3Token = await executeRecaptcha("contact_form");
       await submit(v3Token, "v3");
     } catch {
-      alert("Something went wrong. Please try again.");
+      setError("Something went wrong. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -119,7 +122,7 @@ const ContactFormInner = () => {
             onChange={(e) => setService(e.target.value)}
             required
           >
-            <option value="" disabled hidden>
+            <option value="" disabled>
               What do you need?
             </option>
             <option>Web Development</option>
@@ -178,8 +181,9 @@ const ContactFormInner = () => {
           </span>
         )}
       </Button>
+
       <div className="flex flex-row items-center justify-center">
-        <p className="mb-10 text-[0.95rem] leading-[1.75] text-muted-foreground">
+        <p className="text-[0.95rem] leading-[1.75] text-muted-foreground">
           This form is protected by{" "}
           <Link
             href="https://www.google.com/recaptcha"
@@ -191,6 +195,11 @@ const ContactFormInner = () => {
           .
         </p>
       </div>
+      {error && (
+        <p className="text-center font-mono text-[0.85rem] text-red-500">
+          Something went wrong. Please try again or email us directly.
+        </p>
+      )}
     </form>
   );
 };

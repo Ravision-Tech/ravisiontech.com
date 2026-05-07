@@ -38,6 +38,8 @@ const Footer = () => {
           <Link href={GitHubURL} target="_blank" className="text-dim transition-colors duration-200 hover:text-primary">
             <SiGithub className="h-4 w-4" />
           </Link>
+        </div>
+        <div className="md:order-3">
           <ThemeToggle />
         </div>
       </div>
