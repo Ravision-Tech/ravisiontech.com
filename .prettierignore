@@ -2,3 +2,5 @@
 /.next
 /out
 /build
+dist
+coverage

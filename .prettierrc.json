@@ -1,4 +1,5 @@
 {
+  "endOfLine": "lf",
   "importOrder": [
     "^(react/(.*)$)|^(react$)",
     "^(next/(.*)$)|^(next$)",
@@ -8,9 +9,10 @@
     "^[./]"
   ],
   "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
-  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-sort-json"],
+  "plugins": ["@ianvs/prettier-plugin-sort-imports", "prettier-plugin-sort-json", "prettier-plugin-tailwindcss"],
   "printWidth": 120,
   "singleQuote": false,
   "tabWidth": 2,
+  "tailwindStylesheet": "./app/globals.css",
   "trailingComma": "es5"
 }

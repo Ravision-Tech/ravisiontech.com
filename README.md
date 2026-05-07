@@ -1,11 +1,14 @@
 # [ravisiontech.com](https://ravisiontech.com)
 
+<img width="1280" height="640" alt="Social Preview Image" src="https://github.com/user-attachments/assets/58a7493a-ebf0-48d7-9649-dfcd96e49e9d" />
+<br />
+
 Ravision Tech's official [website](https://ravisiontech.com) is an open-source [Next.js](https://nextjs.org/) website. It is written in [TypeScript](https://www.typescriptlang.org) and
 uses [React](https://reactjs.org/).
 
 ## Installation
 
-1. **Install Node**: Install the correct version of node (v22.15.0) for the project.
+1. **Install Node**: Install the correct version of node (v24) for the project.
 
 > ### Note About Node
 >
@@ -19,7 +22,7 @@ uses [React](https://reactjs.org/).
 Run the follow command to make sure that you are on the correct version of node:
 
 ```sh
-node -v # Should be v22.15.0
+node -v # Should be v24.X
 ```
 
 2. **Install Node Dependencies**: Install all the dependencies that the project uses by running the following command in the project's root directory:
@@ -38,7 +41,7 @@ npm run dev
 
 ## Contributing
 
-Contributions are always welcome, though, as this is my personal portfolio website, it may be rejected for any reason.
+Contributions are always welcome, though, as this is the company website for Ravision Tech LLC, it may be rejected for any reason.
 
 ## Feedback
 

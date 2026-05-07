@@ -1,44 +1,56 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 import { Branding } from "@/lib/branding";
 
-const EYE_RADIUS_IN_PX = 16;
+const BASE_SIZE = 34;
+const EYE_RADIUS_IN_PX = 5;
 const ONLY_TRACK_ON_HOVER = false;
 
-const MouseTrackedLogo = () => {
+interface MouseTrackedLogoProps {
+  size?: number;
+}
+
+const MouseTrackedLogo = ({ size = BASE_SIZE }: MouseTrackedLogoProps) => {
+  const eyeRadius = (size / BASE_SIZE) * EYE_RADIUS_IN_PX;
   const containerRef = useRef<HTMLDivElement>(null);
   const [eyePos, setEyePos] = useState({ x: 0, y: 0 });
   const [, setIsHovered] = useState(false);
   const animationFrameRef = useRef<number | undefined>(undefined);
   const targetPosRef = useRef({ x: 0, y: 0 });
   const currentPosRef = useRef({ x: 0, y: 0 });
+  const isTouchDevice = typeof window !== "undefined" && window.matchMedia("(pointer: coarse)").matches;
 
-  const updateEyePos = (clientX: number, clientY: number) => {
-    const rect = containerRef.current?.getBoundingClientRect();
-    if (!rect) return;
+  const updateEyePos = useCallback(
+    (clientX: number, clientY: number) => {
+      const rect = containerRef.current?.getBoundingClientRect();
+      if (!rect) return;
 
-    const mouseX = clientX - rect.left;
-    const mouseY = clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
+      const mouseX = clientX - rect.left;
+      const mouseY = clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
 
-    let dx = mouseX - centerX;
-    let dy = mouseY - centerY;
+      let dx = mouseX - centerX;
+      let dy = mouseY - centerY;
 
-    const distance = Math.sqrt(dx * dx + dy * dy);
-    if (distance > EYE_RADIUS_IN_PX) {
-      const scale = EYE_RADIUS_IN_PX / distance;
-      dx *= scale;
-      dy *= scale;
-    }
+      const distance = Math.sqrt(dx * dx + dy * dy);
+      if (distance > eyeRadius) {
+        const scale = eyeRadius / distance;
+        dx *= scale;
+        dy *= scale;
+      }
 
-    targetPosRef.current = { x: dx, y: dy };
-  };
+      targetPosRef.current = { x: dx, y: dy };
+    },
+    [eyeRadius]
+  );
 
   useEffect(() => {
+    if (isTouchDevice) return;
+
     const smoothing = 0.06; // (0.1 = smooth, 0.5 = snappy)
 
     const animate = () => {
@@ -64,17 +76,17 @@ const MouseTrackedLogo = () => {
         cancelAnimationFrame(animationFrameRef.current);
       }
     };
-  }, []);
+  }, [isTouchDevice]);
 
   useEffect(() => {
-    if (!ONLY_TRACK_ON_HOVER) {
-      const handleMouseMove = (e: MouseEvent) => {
-        updateEyePos(e.clientX, e.clientY);
-      };
-      window.addEventListener("mousemove", handleMouseMove);
-      return () => window.removeEventListener("mousemove", handleMouseMove);
-    }
-  }, []);
+    if (isTouchDevice || ONLY_TRACK_ON_HOVER) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      updateEyePos(e.clientX, e.clientY);
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, [isTouchDevice, updateEyePos]);
 
   const handleMouseLeave = () => {
     targetPosRef.current = { x: 0, y: 0 };
@@ -94,7 +106,8 @@ const MouseTrackedLogo = () => {
   return (
     <div
       ref={containerRef}
-      className="relative w-32 h-32"
+      className="relative flex-shrink-0"
+      style={{ width: size, height: size }}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onMouseEnter={handleMouseEnter}
@@ -103,31 +116,31 @@ const MouseTrackedLogo = () => {
         src="/branding/logo-icon-split/back-of-eye.svg"
         fill
         unoptimized
+        fetchPriority="high"
         priority
         alt={`A part of the logo for ${Branding.Name}`}
-        className="absolute inset-0 w-32 h-full select-none"
+        className="absolute inset-0 select-none"
         draggable={false}
       />
       <Image
         src="/branding/logo-icon-split/eye.svg"
         fill
         unoptimized
+        fetchPriority="high"
         priority
         alt={`A part of the logo for ${Branding.Name}`}
-        style={{
-          transform: `translate(${eyePos.x}px, ${eyePos.y}px)`,
-          willChange: "transform",
-        }}
-        className="absolute inset-0 w-32 h-full select-none"
+        style={{ transform: `translate(${eyePos.x}px, ${eyePos.y}px)`, willChange: "transform" }}
+        className="absolute inset-0 select-none"
         draggable={false}
       />
       <Image
         src="/branding/logo-icon-split/eyelid.svg"
         fill
         unoptimized
+        fetchPriority="high"
         priority
         alt={`A part of the logo for ${Branding.Name}`}
-        className="absolute inset-0 w-32 h-full select-none"
+        className="absolute inset-0 select-none"
         draggable={false}
       />
     </div>
