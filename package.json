@@ -36,6 +36,12 @@
     "react-google-recaptcha-v3": "^1.11.0",
     "tailwind-merge": "^3.3.0"
   },
+  "browserslist": [
+    "chrome >= 109",
+    "firefox >= 121",
+    "safari >= 16",
+    "edge >= 109"
+  ],
   "devDependencies": {
     "@eslint/eslintrc": "^3.2.0",
     "@eslint/js": "^9.39.4",

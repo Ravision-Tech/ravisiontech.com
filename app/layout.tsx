@@ -64,7 +64,10 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en" suppressHydrationWarning className={`${montserrat.variable} ${jetbrainsMono.variable}`}>
-      <head />
+      <head>
+        <link rel="preconnect" href="https://www.google.com" />
+        <link rel="preconnect" href="https://www.gstatic.com" crossOrigin="" />
+      </head>
       <body className="overflow-x-clip bg-surface-body">
         <ThemeProvider attribute="class" defaultTheme="dark">
           <div className="flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground">
