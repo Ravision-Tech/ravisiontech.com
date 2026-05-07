@@ -116,6 +116,7 @@ const MouseTrackedLogo = ({ size = BASE_SIZE }: MouseTrackedLogoProps) => {
         src="/branding/logo-icon-split/back-of-eye.svg"
         fill
         unoptimized
+        fetchPriority="high"
         priority
         alt={`A part of the logo for ${Branding.Name}`}
         className="absolute inset-0 select-none"
@@ -125,6 +126,7 @@ const MouseTrackedLogo = ({ size = BASE_SIZE }: MouseTrackedLogoProps) => {
         src="/branding/logo-icon-split/eye.svg"
         fill
         unoptimized
+        fetchPriority="high"
         priority
         alt={`A part of the logo for ${Branding.Name}`}
         style={{ transform: `translate(${eyePos.x}px, ${eyePos.y}px)`, willChange: "transform" }}
@@ -135,6 +137,7 @@ const MouseTrackedLogo = ({ size = BASE_SIZE }: MouseTrackedLogoProps) => {
         src="/branding/logo-icon-split/eyelid.svg"
         fill
         unoptimized
+        fetchPriority="high"
         priority
         alt={`A part of the logo for ${Branding.Name}`}
         className="absolute inset-0 select-none"

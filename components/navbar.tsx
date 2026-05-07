@@ -50,6 +50,7 @@ export const Navbar = () => {
             width={0}
             height={0}
             unoptimized
+            fetchPriority="high"
             priority
             className="hidden h-4 w-full dark:block"
           />
@@ -59,6 +60,7 @@ export const Navbar = () => {
             width={0}
             height={0}
             unoptimized
+            fetchPriority="high"
             priority
             className="block h-4 w-full dark:hidden"
           />
