@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
+import Button from "./button";
 import MouseTrackedLogo from "./mouse-tracked-logo";
 
 export const Navbar = () => {
@@ -75,12 +76,12 @@ export const Navbar = () => {
           >
             Contact
           </Link>
-          <Link
+          <Button
             href="#contact"
-            className="hidden flex-row items-center gap-2 rounded-[6px] bg-primary px-5 py-2 text-[0.78rem] font-bold tracking-[0.04em] text-primary-foreground transition-opacity hover:opacity-85 md:flex"
+            className="hidden rounded-[6px] px-5 py-2 text-[0.78rem] tracking-[0.04em] transition-opacity hover:translate-y-0 md:flex"
           >
             Start a Project
-          </Link>
+          </Button>
           <button
             onClick={() => setMobileOpen((prev) => !prev)}
             className="block cursor-pointer rounded-[6px] p-2 text-foreground transition-opacity hover:opacity-85 md:hidden"
@@ -139,13 +140,13 @@ export const Navbar = () => {
             >
               Contact
             </Link>
-            <Link
+            <Button
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="flex w-full flex-row items-center justify-center gap-2 rounded-[6px] bg-primary px-5 py-2.5 text-[1.2rem] font-bold tracking-[0.04em] text-primary-foreground transition-opacity hover:opacity-85"
+              className="w-full justify-center rounded-[6px] px-5 py-2.5 text-[1.2rem] tracking-[0.04em] transition-opacity hover:translate-y-0"
             >
               Start a Project
-            </Link>
+            </Button>
           </div>
         </div>
       </div>

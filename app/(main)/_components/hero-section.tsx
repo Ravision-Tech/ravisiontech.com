@@ -1,5 +1,4 @@
-import Link from "next/link";
-
+import Button from "@/components/button";
 import HeroWindow from "@/components/hero-window";
 
 const HeroSection = () => {
@@ -26,18 +25,8 @@ const HeroSection = () => {
           </p>
 
           <div className="animate-fade-up flex flex-wrap items-center gap-4" style={{ animationDelay: "0.32s" }}>
-            <Link
-              href="#contact"
-              className="flex flex-row items-center gap-2 rounded-lg bg-primary px-8 py-[0.9rem] text-[0.88rem] font-bold tracking-[0.02em] text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85"
-            >
-              Start a Project
-            </Link>
-            <Link
-              href="#services"
-              className="inline-block rounded-lg border border-border-bolder px-8 py-[0.9rem] text-[0.88rem] font-semibold text-muted-foreground transition-all duration-200 hover:border-primary hover:text-primary"
-            >
-              See Services
-            </Link>
+            <Button href="#contact">Start a Project</Button>
+            <Button href="#services" variant="secondary">See Services</Button>
           </div>
         </div>
 

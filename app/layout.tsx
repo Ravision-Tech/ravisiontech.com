@@ -59,13 +59,7 @@ const RootLayout = ({
           <div className="flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground">
             <div
               aria-hidden
-              className="pointer-events-none fixed inset-0 z-0"
-              style={{
-                backgroundImage:
-                  "linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)",
-                backgroundSize: "64px 64px",
-                backgroundPosition: "center center",
-              }}
+              className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(var(--grid-line)_1px,transparent_1px),linear-gradient(90deg,var(--grid-line)_1px,transparent_1px)] [background-size:64px_64px] bg-center"
             />
             <Navbar />
             {children}

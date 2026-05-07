@@ -1,7 +1,6 @@
 "use client";
 
-import Link from "next/link";
-
+import Button from "@/components/button";
 import MouseTrackedLogo from "@/components/mouse-tracked-logo";
 import { useIsMobile } from "@/lib/hooks/use-is-mobile";
 
@@ -22,18 +21,8 @@ const NotFound = () => {
         </div>
 
         <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
-          <Link
-            href="/"
-            className="rounded-lg bg-primary px-8 py-[0.9rem] text-[0.88rem] font-bold tracking-[0.02em] text-primary-foreground transition-all duration-200 hover:-translate-y-0.5 hover:opacity-85"
-          >
-            Back to Home
-          </Link>
-          <Link
-            href="/#contact"
-            className="rounded-lg border border-border-bolder px-8 py-[0.9rem] text-[0.88rem] font-semibold text-muted-foreground transition-all duration-200 hover:border-primary hover:text-primary"
-          >
-            Contact Us
-          </Link>
+          <Button href="/">Back to Home</Button>
+          <Button href="/#contact" variant="secondary">Contact Us</Button>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 export const Branding = {
   Name: "Ravision Tech",
+  LegalName: "Ravision Tech LLC",
   Email: "hello@ravisiontech.com",
   Logos: {
     Logomark: "/branding/logomarks/ravision-tech-logomark.svg",
@@ -7,5 +8,5 @@ export const Branding = {
     CombinationMark: "/branding/combinationmarks/ravision-tech-combinationmark-SVG-vector-dark.svg",
   },
   SocialPreviewImage: "meta-images/ravision-tech-social-preview-image.png",
-  CopyrightYear: new Date().getFullYear(),
+  LegalCopyright: `© ${new Date().getFullYear()} Ravision Tech LLC — All rights reserved`,
 };

@@ -6,6 +6,7 @@ import { ChevronDownIcon, Loader2Icon, SendHorizonalIcon, SparklesIcon } from "l
 import ReCAPTCHA from "react-google-recaptcha";
 import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
+import Button from "@/components/button";
 import { cn } from "@/lib/utils";
 
 const inputClass =
@@ -150,14 +151,14 @@ const ContactFormInner = () => {
         </div>
       )}
 
-      <button
+      <Button
         type="submit"
         disabled={sent || loading}
         className={cn(
-          "w-full cursor-pointer rounded-lg border-none px-8 py-4 text-[0.9rem] font-bold tracking-[0.03em] transition-all duration-200",
+          "w-full border-none py-4 text-[0.9rem] tracking-[0.03em]",
           sent
-            ? "cursor-not-allowed bg-brand-success text-foreground opacity-100"
-            : "bg-primary text-primary-foreground hover:-translate-y-0.5 hover:opacity-85 disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
+            ? "cursor-not-allowed bg-brand-success text-foreground opacity-100 hover:translate-y-0 hover:opacity-100"
+            : "disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
         )}
       >
         {sent ? (
@@ -176,7 +177,7 @@ const ContactFormInner = () => {
             <SendHorizonalIcon className="w-4" />
           </span>
         )}
-      </button>
+      </Button>
       <div className="flex flex-row items-center justify-center">
         <p className="mb-10 text-[0.95rem] leading-[1.75] text-muted-foreground">
           This form is protected by{" "}
