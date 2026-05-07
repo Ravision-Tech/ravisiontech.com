@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${Branding.Name} – Web Development Studio`,
-    images: [{ url: Branding.SocialPreviewImage + "?v=v2", alt: "Ravision Tech – We build sites worth staring at." }],
+    images: [{ url: Branding.SocialPreviewImage, alt: "Ravision Tech – We build sites worth staring at." }],
   },
 };
 
