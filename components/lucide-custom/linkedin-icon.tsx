@@ -1,6 +1,6 @@
-import { createLucideIcon } from "lucide-react";
+import { createLucideIcon, type LucideIcon, type LucideProps } from "lucide-react";
 
-const LinkedInIcon = createLucideIcon("linkedin", [
+const LinkedInIconBase = createLucideIcon("linkedin", [
   [
     "path",
     {
@@ -18,5 +18,7 @@ const LinkedInIcon = createLucideIcon("linkedin", [
     },
   ],
 ]);
+
+const LinkedInIcon = ((props: LucideProps) => <LinkedInIconBase aria-hidden="true" {...props} />) as LucideIcon;
 
 export default LinkedInIcon;

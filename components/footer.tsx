@@ -2,7 +2,7 @@ import Link from "next/link";
 import { SiGithub, SiInstagram, SiYoutube } from "@icons-pack/react-simple-icons";
 
 import { GitHubURL, InstagramURL, LinkedInURL, YouTubeURL } from "@/lib/links";
-import LinkedInIcon from "./lucide-custom/linked-in-icon";
+import LinkedInIcon from "./lucide-custom/linkedin-icon";
 import ThemeToggle from "./theme-toggle";
 
 const Footer = () => {

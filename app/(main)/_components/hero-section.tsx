@@ -26,7 +26,9 @@ const HeroSection = () => {
           </p>
 
           <div className="animate-fade-up flex flex-wrap items-center gap-4" style={{ animationDelay: "0.32s" }}>
-            <Button href="#contact">Get in Touch</Button>
+            <Button href="#contact" className="max-sm:scale-105">
+              Get in Touch
+            </Button>
             <Button href="#services" variant="secondary">
               See Services
             </Button>

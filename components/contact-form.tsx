@@ -100,24 +100,33 @@ const ContactFormInner = () => {
     <form ref={formRef} onSubmit={handleSubmit} className="flex flex-col gap-5">
       <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
         <div className="flex flex-col gap-[0.45rem]">
-          <label className={labelClass}>First Name</label>
-          <input className={inputClass} type="text" name="firstName" placeholder="John" required />
+          <label htmlFor="firstName" className={labelClass}>
+            First Name
+          </label>
+          <input id="firstName" className={inputClass} type="text" name="firstName" placeholder="John" required />
         </div>
         <div className="flex flex-col gap-[0.45rem]">
-          <label className={labelClass}>Last Name</label>
-          <input className={inputClass} type="text" name="lastName" placeholder="Smith" />
+          <label htmlFor="lastName" className={labelClass}>
+            Last Name
+          </label>
+          <input id="lastName" className={inputClass} type="text" name="lastName" placeholder="Smith" />
         </div>
       </div>
 
       <div className="flex flex-col gap-[0.45rem]">
-        <label className={labelClass}>Email</label>
-        <input className={inputClass} type="email" name="email" placeholder="john@company.com" required />
+        <label htmlFor="email" className={labelClass}>
+          Email
+        </label>
+        <input id="email" className={inputClass} type="email" name="email" placeholder="john@company.com" required />
       </div>
 
       <div className="flex flex-col gap-[0.45rem]">
-        <label className={labelClass}>Service Needed</label>
+        <label htmlFor="service" className={labelClass}>
+          Service Needed
+        </label>
         <div className="relative">
           <select
+            id="service"
             className={cn(inputClass, "pr-10", service === "" && "cursor-pointer text-dim")}
             value={service}
             onChange={(e) => setService(e.target.value)}
@@ -139,8 +148,11 @@ const ContactFormInner = () => {
       </div>
 
       <div className="flex flex-col gap-[0.45rem]">
-        <label className={labelClass}>Project Details</label>
+        <label htmlFor="details" className={labelClass}>
+          Project Details
+        </label>
         <textarea
+          id="details"
           className={cn(inputClass, "min-h-[120px] resize-y")}
           name="details"
           placeholder="Tell us about your project, goals, timeline, budget..."
@@ -161,7 +173,7 @@ const ContactFormInner = () => {
         type="submit"
         disabled={sent || loading}
         className={cn(
-          "w-full border-none py-4 text-[0.9rem] tracking-[0.03em]",
+          "w-full border-none py-4 text-[0.9rem] tracking-[0.03em] max-md:hover:scale-100",
           sent
             ? "cursor-not-allowed bg-brand-success text-foreground opacity-100 hover:translate-y-0 hover:opacity-100"
             : "disabled:translate-y-0 disabled:cursor-not-allowed disabled:opacity-60"
