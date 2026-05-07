@@ -1,6 +1,7 @@
 # [ravisiontech.com](https://ravisiontech.com)
 <img width="1280" height="640" alt="Social Preview Image" src="https://github.com/user-attachments/assets/58a7493a-ebf0-48d7-9649-dfcd96e49e9d" />
 <br />
+
 Ravision Tech's official [website](https://ravisiontech.com) is an open-source [Next.js](https://nextjs.org/) website. It is written in [TypeScript](https://www.typescriptlang.org) and
 uses [React](https://reactjs.org/).
 
