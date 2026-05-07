@@ -51,6 +51,7 @@ const ContactFormInner = () => {
       if (!res.ok) throw new Error();
 
       setSent(true);
+      setError(null);
       setService("");
       setShowV2(false);
       recaptchaV2Ref.current?.reset();
@@ -69,14 +70,14 @@ const ContactFormInner = () => {
     if (showV2) {
       const v2Token = recaptchaV2Ref.current?.getValue();
       if (!v2Token) {
-        setError("Please complete the CAPTCHA.");
+        setError("Please complete the reCAPTCHA.");
         return;
       }
       setLoading(true);
       try {
         await submit(v2Token, "v2");
       } catch {
-        setError("Something went wrong. Please try again.");
+        setError("Something went wrong. Please try again or email us directly.");
         recaptchaV2Ref.current?.reset();
       } finally {
         setLoading(false);
@@ -89,7 +90,7 @@ const ContactFormInner = () => {
       const v3Token = await executeRecaptcha("contact_form");
       await submit(v3Token, "v3");
     } catch {
-      setError("Something went wrong. Please try again.");
+      setError("Something went wrong. Please try again or email us directly.");
     } finally {
       setLoading(false);
     }
@@ -150,7 +151,9 @@ const ContactFormInner = () => {
       {showV2 && (
         <div className="flex flex-col gap-2">
           <p className="text-[0.8rem] text-muted-foreground">Please confirm you're human to continue.</p>
-          <ReCAPTCHA ref={recaptchaV2Ref} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_V2_SITE_KEY!} theme="dark" />
+          <div className="captcha-mask">
+            <ReCAPTCHA ref={recaptchaV2Ref} sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_V2_SITE_KEY!} theme="dark" />
+          </div>
         </div>
       )}
 
@@ -182,6 +185,7 @@ const ContactFormInner = () => {
         )}
       </Button>
 
+      {error && <p className="text-center font-mono text-[0.85rem] text-red-500">{error}</p>}
       <div className="flex flex-row items-center justify-center">
         <p className="text-[0.95rem] leading-[1.75] text-muted-foreground">
           This form is protected by{" "}
@@ -195,11 +199,6 @@ const ContactFormInner = () => {
           .
         </p>
       </div>
-      {error && (
-        <p className="text-center font-mono text-[0.85rem] text-red-500">
-          Something went wrong. Please try again or email us directly.
-        </p>
-      )}
     </form>
   );
 };

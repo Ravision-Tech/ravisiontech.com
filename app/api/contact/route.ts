@@ -45,7 +45,7 @@ export async function POST(req: Request) {
     const gmail = google.gmail({ version: "v1", auth });
 
     const name = [firstName, lastName].filter(Boolean).join(" ");
-    const subjectText = `New inquiry from ${name} - ${service}`;
+    const subjectText = `New Inquiry: ${name} - ${service}`;
     const subject = `=?UTF-8?B?${Buffer.from(subjectText).toString("base64")}?=`;
 
     const detailsEscaped = details

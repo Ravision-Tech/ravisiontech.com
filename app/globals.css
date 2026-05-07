@@ -315,3 +315,16 @@ html {
 .grecaptcha-badge {
   visibility: hidden;
 }
+
+.captcha-mask {
+  display: inline-block;
+  overflow: hidden;
+  width: 298px;
+  height: 72px;
+}
+
+.captcha-mask iframe {
+  position: relative;
+  left: -2px;
+  top: -2px;
+}

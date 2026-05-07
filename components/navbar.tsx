@@ -129,14 +129,14 @@ export const Navbar = () => {
             <Link
               href="/#services"
               onClick={() => setMobileOpen(false)}
-              className="text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
+              className="flex w-full items-center justify-center text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               Services
             </Link>
             <Link
               href="/#contact"
               onClick={() => setMobileOpen(false)}
-              className="text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
+              className="flex w-full items-center justify-center text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               Contact
             </Link>
