@@ -12,7 +12,7 @@ const Footer = () => {
       </span>
 
       <div className="flex items-center gap-8 max-md:flex-col max-md:gap-4">
-        <div className="flex items-center gap-6 max-md:order-2">
+        {/* <div className="flex items-center gap-6 max-md:order-2">
           <Link
             href="/terms-and-conditions"
             className="font-mono-brand text-[0.65rem] tracking-[0.05em] text-dim transition-colors duration-200 hover:text-primary"
@@ -25,7 +25,7 @@ const Footer = () => {
           >
             Privacy
           </Link>
-        </div>
+        </div> */}
 
         <div className="flex items-center gap-6 max-md:order-1">
           <Link

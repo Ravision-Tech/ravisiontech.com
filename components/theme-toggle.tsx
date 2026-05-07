@@ -34,16 +34,16 @@ const ThemeToggle = () => {
       />
       <div
         className={cn(
-          "relative z-10 flex h-6 w-6 items-center justify-center transition-colors duration-200",
-          isDark ? "text-foreground" : "text-dim"
+          "relative z-10 flex h-6 w-6 items-center justify-center text-dim transition-colors duration-200",
+          isDark && "text-dim group-hover:text-primary"
         )}
       >
         <MoonIcon className="h-3.5 w-3.5" />
       </div>
       <div
         className={cn(
-          "relative z-10 flex h-6 w-6 items-center justify-center transition-colors duration-200",
-          !isDark ? "text-foreground" : "text-dim"
+          "relative z-10 flex h-6 w-6 items-center justify-center text-dim transition-colors duration-200",
+          !isDark && "text-dim group-hover:text-primary"
         )}
       >
         <SunIcon className="h-3.5 w-3.5" />
