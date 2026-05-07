@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiInstagram, SiYoutube } from "@icons-pack/react-simple-icons";
 
-import { GitHubURL, InstagramURL } from "@/lib/links";
+import { GitHubURL, InstagramURL, LinkedInURL, YouTubeURL } from "@/lib/links";
+import LinkedInIcon from "./lucide-custom/linked-in-icon";
 import ThemeToggle from "./theme-toggle";
 
 const Footer = () => {
@@ -29,11 +30,25 @@ const Footer = () => {
 
         <div className="flex items-center gap-6 max-md:order-1">
           <Link
+            href={YouTubeURL}
+            target="_blank"
+            className="text-dim transition-colors duration-200 hover:text-primary"
+          >
+            <SiYoutube className="h-4 w-4" />
+          </Link>
+          <Link
             href={InstagramURL}
             target="_blank"
             className="text-dim transition-colors duration-200 hover:text-primary"
           >
             <SiInstagram className="h-4 w-4" />
+          </Link>
+          <Link
+            href={LinkedInURL}
+            target="_blank"
+            className="text-dim transition-colors duration-200 hover:text-primary"
+          >
+            <LinkedInIcon className="h-5 w-5" />
           </Link>
           <Link href={GitHubURL} target="_blank" className="text-dim transition-colors duration-200 hover:text-primary">
             <SiGithub className="h-4 w-4" />
