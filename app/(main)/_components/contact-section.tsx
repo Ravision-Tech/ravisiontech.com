@@ -12,9 +12,11 @@ const ContactSection = () => {
         <div>
           <SectionLabel label="Get in Touch" />
           <h2 className="mb-6 text-[clamp(2.5rem,4.5vw,4rem)] leading-[1.04] font-extrabold tracking-[-0.035em]">
-            Let&apos;s build
+            Your vision.
             <br />
-            <em className="text-primary not-italic">something great.</em>
+            Our code.
+            <br />
+            <em className="text-primary not-italic">Let&apos;s talk.</em>
           </h2>
           <p className="mb-10 text-[0.95rem] leading-[1.75] text-muted-foreground">
             Tell us about your project. We&apos;ll respond within 48 hours with honest advice — not a sales pitch.
