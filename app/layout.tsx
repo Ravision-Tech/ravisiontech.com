@@ -44,11 +44,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+const RootLayout = ({
   children,
 }: Readonly<{
   children: React.ReactNode;
-}>) {
+}>) => {
   return (
     <html lang="en" suppressHydrationWarning className={`${montserrat.variable} ${jetbrainsMono.variable}`}>
       <head />
@@ -60,4 +60,6 @@ export default function RootLayout({
       <GoogleAnalytics gaId="G-LMLYM4Y2FS" />
     </html>
   );
-}
+};
+
+export default RootLayout;

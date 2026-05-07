@@ -39,7 +39,8 @@ export const Navbar = () => {
         )}
       >
         <Link
-          href="#"
+          href="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           className="flex items-center gap-[10px] text-[1rem] font-black tracking-[0.08em] text-foreground no-underline"
         >
           <MouseTrackedLogo />

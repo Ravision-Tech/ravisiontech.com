@@ -5,7 +5,7 @@ import ContactSection from "./_components/contact-section";
 import HeroSection from "./_components/hero-section";
 import ServicesSection from "./_components/services-section";
 
-export default function MainPage() {
+const MainPage = () => {
   return (
     <div className="min-h-screen overflow-x-hidden bg-background text-foreground">
       <div
@@ -27,4 +27,6 @@ export default function MainPage() {
       <Footer />
     </div>
   );
-}
+};
+
+export default MainPage;
