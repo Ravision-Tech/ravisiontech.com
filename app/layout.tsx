@@ -6,6 +6,8 @@ import "./globals.css";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 import { Branding } from "@/lib/branding";
 import { DomainURL } from "@/lib/links";
 
@@ -54,7 +56,21 @@ const RootLayout = ({
       <head />
       <body className="overflow-x-clip bg-surface-body">
         <ThemeProvider attribute="class" defaultTheme="dark">
-          {children}
+          <div className="flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground">
+            <div
+              aria-hidden
+              className="pointer-events-none fixed inset-0 z-0"
+              style={{
+                backgroundImage:
+                  "linear-gradient(var(--grid-line) 1px, transparent 1px), linear-gradient(90deg, var(--grid-line) 1px, transparent 1px)",
+                backgroundSize: "64px 64px",
+                backgroundPosition: "center center",
+              }}
+            />
+            <Navbar />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
       <GoogleAnalytics gaId="G-LMLYM4Y2FS" />
