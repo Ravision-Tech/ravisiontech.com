@@ -4,7 +4,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 const variants = {
-  primary: "bg-primary font-bold tracking-[0.02em] text-primary-foreground hover:-translate-y-0.5 hover:opacity-85",
+  primary: "bg-primary font-bold tracking-[0.02em] text-primary-foreground hover:scale-105 hover:opacity-85",
   secondary: "border border-border-bolder font-semibold text-muted-foreground hover:border-primary hover:text-primary",
 };
 

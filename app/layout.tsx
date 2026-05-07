@@ -37,12 +37,22 @@ export const metadata: Metadata = {
     type: "website",
     url: DomainURL,
     title: `${Branding.Name} – Web Development Studio`,
-    images: [{ url: Branding.SocialPreviewImage, alt: "Ravision Tech – We build sites worth staring at." }],
+    images: [
+      {
+        url: "/branding/meta-images/ravision-tech-social-preview-image.png",
+        alt: "Ravision Tech – We build sites worth staring at.",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: `${Branding.Name} – Web Development Studio`,
-    images: [{ url: Branding.SocialPreviewImage, alt: "Ravision Tech – We build sites worth staring at." }],
+    images: [
+      {
+        url: "/branding/meta-images/ravision-tech-social-preview-image.png",
+        alt: "Ravision Tech – We build sites worth staring at.",
+      },
+    ],
   },
 };
 

@@ -70,20 +70,18 @@ export const Navbar = () => {
             href="/#services"
             className="hidden text-[0.82rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground md:block"
           >
-            Services
+            See Services
           </Link>
-          <Link
+          {/* <Link
             href="/#contact"
             className="hidden text-[0.82rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground md:block"
           >
             Contact
-          </Link>
-          <Button
-            href="/#contact"
-            className="hidden rounded-[6px] px-5 py-2 text-[0.78rem] tracking-[0.04em] transition-opacity hover:translate-y-0 md:flex"
-          >
-            Start a Project
+          </Link> */}
+          <Button href="/#contact" className="hidden rounded-[6px] px-5 py-2 text-[0.78rem] tracking-[0.04em] md:flex">
+            Get in Touch
           </Button>
+          {/* <ThemeToggle /> */}
           <button
             onClick={() => setMobileOpen((prev) => !prev)}
             className="block cursor-pointer rounded-[6px] p-2 text-foreground transition-opacity hover:opacity-85 md:hidden"
@@ -133,22 +131,23 @@ export const Navbar = () => {
               onClick={() => setMobileOpen(false)}
               className="flex w-full items-center justify-center text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
-              Services
+              See Services
             </Link>
-            <Link
+            {/* <Link
               href="/#contact"
               onClick={() => setMobileOpen(false)}
               className="flex w-full items-center justify-center text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               Contact
-            </Link>
+            </Link> */}
             <Button
               href="/#contact"
               onClick={() => setMobileOpen(false)}
-              className="flex w-full flex-row items-center justify-center rounded-[6px] px-5 py-2.5 text-[1.2rem] tracking-[0.04em] transition-opacity hover:translate-y-0"
+              className="flex w-full flex-row items-center justify-center rounded-[6px] px-5 py-2.5 text-[1.2rem] tracking-[0.04em] hover:scale-100"
             >
-              Start a Project
+              Get in Touch
             </Button>
+            {/* <ThemeToggle /> */}
           </div>
         </div>
       </div>

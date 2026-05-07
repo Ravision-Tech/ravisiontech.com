@@ -19,7 +19,7 @@ const ContactSection = () => {
             <em className="text-primary not-italic">Let&apos;s talk.</em>
           </h2>
           <p className="mb-10 text-[0.95rem] leading-[1.75] text-muted-foreground">
-            Tell us about your project. We&apos;ll respond within 48 hours with honest advice — not a sales pitch.
+            Drop us a note about what you're building. We&apos;ll reply within 48 hours with honest advice.
           </p>
           <div className="flex flex-col gap-4">
             <MetaItem icon={MailIcon}>
