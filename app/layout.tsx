@@ -36,11 +36,12 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: DomainURL,
+    siteName: Branding.Name,
     title: `${Branding.Name} – Web Development Studio`,
     images: [
       {
-        url: "/branding/meta-images/ravision-tech-social-preview-image.png",
-        alt: "Ravision Tech – We build sites worth staring at.",
+        url: Branding.SocialPreviewImage,
+        alt: `${Branding.Name} – We build sites worth staring at.`,
       },
     ],
   },
@@ -49,8 +50,8 @@ export const metadata: Metadata = {
     title: `${Branding.Name} – Web Development Studio`,
     images: [
       {
-        url: "/branding/meta-images/ravision-tech-social-preview-image.png",
-        alt: "Ravision Tech – We build sites worth staring at.",
+        url: Branding.SocialPreviewImage,
+        alt: `${Branding.Name} – We build sites worth staring at.`,
       },
     ],
   },

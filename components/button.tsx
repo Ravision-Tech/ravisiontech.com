@@ -21,7 +21,7 @@ type ButtonProps = AsButton | AsLink;
 
 const Button = ({ variant = "primary", className, children, ...props }: ButtonProps) => {
   const classes = cn(
-    "rounded-lg px-8 py-[0.9rem] text-[0.88rem] transition-all duration-200 cursor-pointer",
+    "rounded-lg px-8 py-[0.9rem] text-[0.88rem] transition-all duration-200 cursor-pointer select-none",
     variants[variant],
     className
   );
