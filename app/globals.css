@@ -137,8 +137,8 @@
   --border-bolder: #333333;
 
   /* Text */
-  --text-muted: #3d3d3d;
-  --text-faint: #555555;
+  --text-muted: #5a5a5a;
+  --text-faint: #707070;
 
   /* macOS window dots */
   --dot-red: #ff5f57;

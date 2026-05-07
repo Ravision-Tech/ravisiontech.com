@@ -118,7 +118,7 @@ const ContactFormInner = () => {
         <label className={labelClass}>Service Needed</label>
         <div className="relative">
           <select
-            className={cn(inputClass, "pr-10", service === "" && "cursor-pointer text-muted-foreground")}
+            className={cn(inputClass, "pr-10", service === "" && "cursor-pointer text-dim")}
             value={service}
             onChange={(e) => setService(e.target.value)}
             required
