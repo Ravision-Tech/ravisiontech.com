@@ -23,8 +23,8 @@ const jetbrainsMono = JetBrains_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(DomainURL),
-  title: `${Branding.Name} – Web Development Services`,
-  description: `The official website for ${Branding.Name}.`,
+  title: `${Branding.Name} – Web Development Studio`,
+  description: `${Branding.Name} builds high-performance websites that rank in search and keep people looking. Custom web development, design, e-commerce, and SEO.`,
   icons: {
     icon: [
       {
@@ -36,13 +36,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: DomainURL,
-    title: `${Branding.Name} – Web Development Services`,
-    images: [{ url: Branding.SocialPreviewImage, alt: "A picture reading 'Ravision Tech'" }],
+    title: `${Branding.Name} – Web Design & Development Services`,
+    images: [{ url: Branding.SocialPreviewImage, alt: "Ravision Tech – Web Design & Development" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${Branding.Name} – Web Development Services`,
-    images: [{ url: Branding.SocialPreviewImage, alt: "A picture reading 'Ravision Tech'" }],
+    title: `${Branding.Name} – Web Design & Development Services`,
+    images: [{ url: Branding.SocialPreviewImage, alt: "Ravision Tech – Web Design & Development" }],
   },
 };
 

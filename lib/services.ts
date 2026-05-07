@@ -11,25 +11,25 @@ export const SERVICES: Service[] = [
   {
     icon: Code2Icon,
     name: "Web Development",
-    desc: "Fast, modern, scalable applications built with the latest stack. Clean code that's built to last and easy to grow as your business evolves.",
+    desc: "Fast, modern, and built to scale. We write clean code with the latest tech stack that ages well, because your business shouldn't outgrow its website.",
     tags: ["Next.js", "React", "TypeScript"],
   },
   {
     icon: PaletteIcon,
     name: "Web Design",
-    desc: "Pixel-perfect, brand-led designs that stand out and convert. Every layout decision is intentional and built for real users, not just aesthetics.",
+    desc: "Pixel-perfect, brand-led designs that earn a second look. Every layout decision is intentional and built for real users, not just aesthetics.",
     tags: ["UI/UX", "Figma", "Prototyping"],
   },
   {
     icon: ShoppingCartIcon,
     name: "E-Commerce",
-    desc: "Online stores built to convert. From product pages to checkout flows, we optimize every step of the buying journey for maximum revenue.",
+    desc: "Online stores built to sell. From the first product page to the final confirmation screen, every step is optimized for the one thing that matters: getting people to buy.",
     tags: ["Shopify", "Stripe"],
   },
   {
     icon: ActivityIcon,
     name: "SEO & Performance",
-    desc: "Sites that Google loves and users stay on. We build with Core Web Vitals in mind from day one and never as an afterthought.",
+    desc: "If no one can find your site, does it even exist? We bake Core Web Vitals in from day one, so Google finds you before your competition does.",
     tags: ["Core Web Vitals", "On-Page SEO", "Analytics"],
   },
 ];

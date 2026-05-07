@@ -65,19 +65,19 @@ export const Navbar = () => {
         </Link>
         <div className="flex list-none items-center gap-8">
           <Link
-            href="#services"
+            href="/#services"
             className="hidden text-[0.82rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground md:block"
           >
             Services
           </Link>
           <Link
-            href="#contact"
+            href="/#contact"
             className="hidden text-[0.82rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground md:block"
           >
             Contact
           </Link>
           <Button
-            href="#contact"
+            href="/#contact"
             className="hidden rounded-[6px] px-5 py-2 text-[0.78rem] tracking-[0.04em] transition-opacity hover:translate-y-0 md:flex"
           >
             Start a Project
@@ -127,23 +127,23 @@ export const Navbar = () => {
         >
           <div className="flex flex-col items-center gap-4 px-6 py-4">
             <Link
-              href="#services"
+              href="/#services"
               onClick={() => setMobileOpen(false)}
               className="text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               Services
             </Link>
             <Link
-              href="#contact"
+              href="/#contact"
               onClick={() => setMobileOpen(false)}
               className="text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               Contact
             </Link>
             <Button
-              href="#contact"
+              href="/#contact"
               onClick={() => setMobileOpen(false)}
-              className="w-full justify-center rounded-[6px] px-5 py-2.5 text-[1.2rem] tracking-[0.04em] transition-opacity hover:translate-y-0"
+              className="flex w-full flex-row items-center justify-center rounded-[6px] px-5 py-2.5 text-[1.2rem] tracking-[0.04em] transition-opacity hover:translate-y-0"
             >
               Start a Project
             </Button>

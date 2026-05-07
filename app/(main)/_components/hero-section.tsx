@@ -12,21 +12,24 @@ const HeroSection = () => {
           >
             We build
             <br />
-            sites that
+            sites worth
             <br />
-            <em className="text-primary not-italic">get results.</em>
+            <em className="text-primary not-italic">staring at.</em>
           </h1>
 
           <p
             className="animate-fade-up mb-12 max-w-[460px] text-[1.1rem] leading-[1.75] font-normal text-muted-foreground"
             style={{ animationDelay: "0.22s" }}
           >
-            Ravision Tech designs and develops high-performance websites for businesses that refuse to blend in.
+            Most websites disappear into the digital noise. We build high-performance sites that stop the scroll, rank
+            in search, and give people a reason to stay.
           </p>
 
           <div className="animate-fade-up flex flex-wrap items-center gap-4" style={{ animationDelay: "0.32s" }}>
             <Button href="#contact">Start a Project</Button>
-            <Button href="#services" variant="secondary">See Services</Button>
+            <Button href="#services" variant="secondary">
+              See Services
+            </Button>
           </div>
         </div>
 
