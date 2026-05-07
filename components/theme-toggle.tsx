@@ -24,7 +24,7 @@ const ThemeToggle = () => {
     <button
       onClick={() => setTheme(isDark ? "light" : "dark")}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-      className="group relative flex cursor-pointer items-center rounded-full border border-border p-0.5"
+      className="group relative flex cursor-pointer items-center rounded-full border border-border p-0.5 transition-colors duration-200 hover:border-primary"
     >
       <div
         className={cn(
@@ -35,7 +35,7 @@ const ThemeToggle = () => {
       <div
         className={cn(
           "relative z-10 flex h-6 w-6 items-center justify-center transition-colors duration-200",
-          isDark ? "text-foreground" : "text-dim group-hover:text-primary"
+          isDark ? "text-foreground" : "text-dim"
         )}
       >
         <MoonIcon className="h-3.5 w-3.5" />
@@ -43,7 +43,7 @@ const ThemeToggle = () => {
       <div
         className={cn(
           "relative z-10 flex h-6 w-6 items-center justify-center transition-colors duration-200",
-          !isDark ? "text-foreground" : "text-dim group-hover:text-primary"
+          !isDark ? "text-foreground" : "text-dim"
         )}
       >
         <SunIcon className="h-3.5 w-3.5" />

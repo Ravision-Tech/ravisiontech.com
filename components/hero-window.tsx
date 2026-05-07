@@ -46,7 +46,6 @@ const HeroWindow = () => {
           cursor: "default",
         }}
       >
-        {/* Title bar */}
         <div
           className="flex items-center gap-2 px-3.5"
           style={{ height: 36, borderBottom: "1px solid var(--border-subtle)", borderRadius: "10px 10px 0 0" }}
@@ -90,7 +89,6 @@ const HeroWindow = () => {
             preserveAspectRatio="none"
           >
             <line x1={W} y1={0} x2={0} y2={H} stroke="var(--brand-glow-lg)" strokeWidth="1" />
-            {/* Subtle glow duplicate */}
             <line x1={W} y1={0} x2={0} y2={H} stroke="var(--brand-glow-md)" strokeWidth="4" />
           </svg>
         </div>
