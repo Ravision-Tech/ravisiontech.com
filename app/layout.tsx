@@ -36,13 +36,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     url: DomainURL,
-    title: `${Branding.Name} – Web Design & Development Services`,
-    images: [{ url: Branding.SocialPreviewImage, alt: "Ravision Tech – Web Design & Development" }],
+    title: `${Branding.Name} – Web Development Studio`,
+    images: [{ url: Branding.SocialPreviewImage, alt: "Ravision Tech – We build sites worth staring at." }],
   },
   twitter: {
     card: "summary_large_image",
-    title: `${Branding.Name} – Web Design & Development Services`,
-    images: [{ url: Branding.SocialPreviewImage, alt: "Ravision Tech – Web Design & Development" }],
+    title: `${Branding.Name} – Web Development Studio`,
+    images: [{ url: Branding.SocialPreviewImage + "?v=v2", alt: "Ravision Tech – We build sites worth staring at." }],
   },
 };
 

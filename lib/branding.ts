@@ -7,6 +7,6 @@ export const Branding = {
     Wordmark: "/branding/wordmarks/ravision-tech-wordmark-long.svg",
     CombinationMark: "/branding/combinationmarks/ravision-tech-combinationmark-SVG-vector-dark.svg",
   },
-  SocialPreviewImage: "meta-images/ravision-tech-social-preview-image.png",
+  SocialPreviewImage: "meta-images/ravision-tech-social-preview-image.png?v=2",
   LegalCopyright: `© ${new Date().getFullYear()} Ravision Tech LLC — All rights reserved`,
 };
