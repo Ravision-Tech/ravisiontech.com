@@ -1,3 +1,5 @@
+"use client";
+
 import type { ComponentPropsWithoutRef } from "react";
 import Link from "next/link";
 
@@ -27,9 +29,26 @@ const Button = ({ variant = "primary", className, children, ...props }: ButtonPr
   );
 
   if ("href" in props && props.href !== undefined) {
-    const { href, ...rest } = props as AsLink;
+    const { href, onClick, ...rest } = props as AsLink;
+
+    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+      if (onClick) {
+        onClick(e);
+      }
+
+      const hashIndex = href.indexOf("#");
+      if (hashIndex !== -1) {
+        const targetId = href.substring(hashIndex + 1);
+        const element = document.getElementById(targetId);
+
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }
+    };
+
     return (
-      <Link href={href} className={classes} {...rest}>
+      <Link href={href} className={classes} onClick={handleClick} {...rest}>
         {children}
       </Link>
     );
