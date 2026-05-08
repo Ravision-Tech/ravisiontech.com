@@ -7,6 +7,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 import Button from "./button";
 import MouseTrackedLogo from "./mouse-tracked-logo";
+import ScrollLink from "./scroll-link";
 
 export const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -66,18 +67,18 @@ export const Navbar = () => {
           />
         </Link>
         <div className="flex list-none items-center gap-8">
-          <Link
+          <ScrollLink
             href="/#services"
             className="hidden text-[0.82rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground md:block"
           >
             See Services
-          </Link>
-          {/* <Link
+          </ScrollLink>
+          {/* <ScrollLink
             href="/#contact"
             className="hidden text-[0.82rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground md:block"
           >
             Contact
-          </Link> */}
+          </ScrollLink> */}
           <Button href="/#contact" className="hidden rounded-[6px] px-5 py-2 text-[0.78rem] tracking-[0.04em] md:flex">
             Get in Touch
           </Button>
@@ -126,20 +127,20 @@ export const Navbar = () => {
           )}
         >
           <div className="flex flex-col items-center gap-4 px-6 py-4">
-            <Link
+            <ScrollLink
               href="/#services"
               onClick={() => setMobileOpen(false)}
               className="flex w-full items-center justify-center text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               See Services
-            </Link>
-            {/* <Link
+            </ScrollLink>
+            {/* <ScrollLink
               href="/#contact"
               onClick={() => setMobileOpen(false)}
               className="flex w-full items-center justify-center text-[1.2rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200 hover:text-foreground"
             >
               Contact
-            </Link> */}
+            </ScrollLink> */}
             <Button
               href="/#contact"
               onClick={() => setMobileOpen(false)}

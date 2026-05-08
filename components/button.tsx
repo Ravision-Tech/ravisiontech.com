@@ -1,9 +1,7 @@
-"use client";
-
 import type { ComponentPropsWithoutRef } from "react";
-import Link from "next/link";
 
 import { cn } from "@/lib/utils";
+import ScrollLink from "./scroll-link";
 
 const variants = {
   primary: "bg-primary font-bold tracking-[0.02em] text-primary-foreground hover:scale-105 hover:opacity-85",
@@ -17,7 +15,7 @@ type CommonProps = {
 };
 
 type AsButton = CommonProps & ComponentPropsWithoutRef<"button"> & { href?: never };
-type AsLink = CommonProps & { href: string } & Omit<ComponentPropsWithoutRef<typeof Link>, "href" | "children">;
+type AsLink = CommonProps & { href: string } & Omit<ComponentPropsWithoutRef<typeof ScrollLink>, "href" | "children">;
 
 type ButtonProps = AsButton | AsLink;
 
@@ -29,28 +27,10 @@ const Button = ({ variant = "primary", className, children, ...props }: ButtonPr
   );
 
   if ("href" in props && props.href !== undefined) {
-    const { href, onClick, ...rest } = props as AsLink;
-
-    const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-      if (onClick) {
-        onClick(e);
-      }
-
-      const hashIndex = href.indexOf("#");
-      if (hashIndex !== -1) {
-        const targetId = href.substring(hashIndex + 1);
-        const element = document.getElementById(targetId);
-
-        if (element) {
-          element.scrollIntoView({ behavior: "smooth" });
-        }
-      }
-    };
-
     return (
-      <Link href={href} className={classes} onClick={handleClick} {...rest}>
+      <ScrollLink className={classes} {...(props as AsLink)}>
         {children}
-      </Link>
+      </ScrollLink>
     );
   }
 
