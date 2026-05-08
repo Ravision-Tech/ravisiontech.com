@@ -7,7 +7,7 @@ const HeroSection = () => {
       <div className="flex w-full items-center gap-8">
         <div className="flex min-w-0 flex-1 flex-col">
           <h1
-            className="animate-fade-up mb-8 text-[clamp(3rem,6.5vw,7.5rem)] leading-[0.98] font-black tracking-[-0.04em]"
+            className="animate-fade-up mb-8 text-[clamp(3rem,6.5vw,5.5rem)] leading-[0.98] font-black tracking-[-0.04em]"
             style={{ animationDelay: "0.12s" }}
           >
             We build
