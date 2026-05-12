@@ -54,16 +54,16 @@ const BrandGuidelinesPage = () => {
               </div>
               <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
                 <AssetCard
-                  asset="logomark"
+                  asset={Branding.BrandAssets.logomarks.logomark}
                   label="Logomark"
-                  sublabel="SVG · For dark backgrounds"
+                  sublabel="For dark backgrounds"
                   bg="dark"
                   imgClassName="max-w-[100px]"
                 />
                 <AssetCard
-                  asset="logomark"
+                  asset={Branding.BrandAssets.logomarks.logomark}
                   label="Logomark on Brand Color"
-                  sublabel="SVG · For brand-colored backgrounds"
+                  sublabel="For brand-colored backgrounds"
                   bg="dark"
                   imgClassName="max-w-[100px]"
                 />
@@ -83,15 +83,15 @@ const BrandGuidelinesPage = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
                   <AssetCard
-                    asset="wordmark-white"
+                    asset={Branding.BrandAssets.wordmarks.white}
                     label="Wordmark (White)"
-                    sublabel="SVG · For dark backgrounds"
+                    sublabel="For dark backgrounds"
                     bg="dark"
                   />
                   <AssetCard
-                    asset="wordmark-black"
+                    asset={Branding.BrandAssets.wordmarks.black}
                     label="Wordmark (Dark)"
-                    sublabel="SVG · For light backgrounds"
+                    sublabel="For light backgrounds"
                     bg="light"
                   />
                 </div>
@@ -106,15 +106,15 @@ const BrandGuidelinesPage = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
                   <AssetCard
-                    asset="wordmark-long-white"
+                    asset={Branding.BrandAssets.wordmarks.long.white}
                     label="Long Wordmark (White)"
-                    sublabel="SVG · For dark backgrounds"
+                    sublabel="For dark backgrounds"
                     bg="dark"
                   />
                   <AssetCard
-                    asset="wordmark-long-black"
+                    asset={Branding.BrandAssets.wordmarks.long.black}
                     label="Long Wordmark (Black)"
-                    sublabel="SVG · For light backgrounds"
+                    sublabel="For light backgrounds"
                     bg="light"
                   />
                 </div>
@@ -135,15 +135,15 @@ const BrandGuidelinesPage = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
                   <AssetCard
-                    asset="combinationmark-white"
+                    asset={Branding.BrandAssets.combinationmarks.white}
                     label="Combinationmark (White)"
-                    sublabel="SVG · For dark backgrounds"
+                    sublabel="For dark backgrounds"
                     bg="dark"
                   />
                   <AssetCard
-                    asset="combinationmark-black"
+                    asset={Branding.BrandAssets.combinationmarks.black}
                     label="Combinationmark (Black)"
-                    sublabel="SVG · For light backgrounds"
+                    sublabel="For light backgrounds"
                     bg="light"
                   />
                 </div>
@@ -158,15 +158,15 @@ const BrandGuidelinesPage = () => {
                 </div>
                 <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
                   <AssetCard
-                    asset="combinationmark-long-white"
+                    asset={Branding.BrandAssets.combinationmarks.long.white}
                     label="Long Combinationmark (White)"
-                    sublabel="SVG · For dark backgrounds"
+                    sublabel="For dark backgrounds"
                     bg="dark"
                   />
                   <AssetCard
-                    asset="combinationmark-long-black"
+                    asset={Branding.BrandAssets.combinationmarks.long.black}
                     label="Long Combinationmark (Black)"
-                    sublabel="SVG · For light backgrounds"
+                    sublabel="For light backgrounds"
                     bg="light"
                   />
                 </div>

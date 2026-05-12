@@ -1,43 +1,42 @@
+function asset(folder: string, slug: string, alt: string) {
+  return {
+    svg: `/branding/${folder}/${slug}.svg`,
+    png: `/branding/${folder}/${slug}.png`,
+    alt,
+  };
+}
+
+export type BrandAsset = ReturnType<typeof asset>;
+
 const BrandAssets = {
-  logomark: {
-    src: "/branding/logomarks/ravision-tech-logomark.svg",
-    alt: "Ravision Tech Logomark",
+  logomarks: {
+    logomark: asset("logomarks", "ravision-tech-logomark", "Ravision Tech Logomark"),
   },
-  "wordmark-white": {
-    src: "/branding/wordmarks/ravision-tech-wordmark-white.svg",
-    alt: "Ravision Tech Wordmark — White",
+  wordmarks: {
+    white: asset("wordmarks", "ravision-tech-wordmark-white", "Ravision Tech Wordmark (White)"),
+    black: asset("wordmarks", "ravision-tech-wordmark-black", "Ravision Tech Wordmark (Black)"),
+    long: {
+      white: asset("wordmarks", "ravision-tech-wordmark-long-white", "Ravision Tech Long Wordmark (White)"),
+      black: asset("wordmarks", "ravision-tech-wordmark-long-black", "Ravision Tech Long Wordmark (Black)"),
+    },
   },
-  "wordmark-black": {
-    src: "/branding/wordmarks/ravision-tech-wordmark-black.svg",
-    alt: "Ravision Tech Wordmark — Black",
-  },
-  "wordmark-long-white": {
-    src: "/branding/wordmarks/ravision-tech-wordmark-long-white.svg",
-    alt: "Ravision Tech Long Wordmark — White",
-  },
-  "wordmark-long-black": {
-    src: "/branding/wordmarks/ravision-tech-wordmark-long-black.svg",
-    alt: "Ravision Tech Long Wordmark — Black",
-  },
-  "combinationmark-white": {
-    src: "/branding/combinationmarks/ravision-tech-combinationmark-white.svg",
-    alt: "Ravision Tech Combinationmark — White",
-  },
-  "combinationmark-black": {
-    src: "/branding/combinationmarks/ravision-tech-combinationmark-black.svg",
-    alt: "Ravision Tech Combinationmark — Black",
-  },
-  "combinationmark-long-black": {
-    src: "/branding/combinationmarks/ravision-tech-combinationmark-long-black.svg",
-    alt: "Ravision Tech Combinationmark — Black",
-  },
-  "combinationmark-long-white": {
-    src: "/branding/combinationmarks/ravision-tech-combinationmark-long-white.svg",
-    alt: "Ravision Tech Combinationmark — White",
+  combinationmarks: {
+    white: asset("combinationmarks", "ravision-tech-combinationmark-white", "Ravision Tech Combinationmark (White)"),
+    black: asset("combinationmarks", "ravision-tech-combinationmark-black", "Ravision Tech Combinationmark (Black)"),
+    long: {
+      white: asset(
+        "combinationmarks",
+        "ravision-tech-combinationmark-long-white",
+        "Ravision Tech Long Combinationmark (White)"
+      ),
+      black: asset(
+        "combinationmarks",
+        "ravision-tech-combinationmark-long-black",
+        "Ravision Tech Long Combinationmark (Black)"
+      ),
+    },
   },
 };
-
-export type BrandAssetKey = keyof typeof BrandAssets;
 
 const BrandColors = [
   { name: "Light Blue", hex: "#6FC0CA", textClass: "text-[#131313]" },
