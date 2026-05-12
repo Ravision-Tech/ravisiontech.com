@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: Branding.Logos.Logomark,
-        href: Branding.Logos.Logomark,
+        url: Branding.BrandAssets.logomark.src,
+        href: Branding.BrandAssets.logomark.src,
       },
     ],
   },

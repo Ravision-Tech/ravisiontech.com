@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { SiGithub, SiInstagram, SiYoutube } from "@icons-pack/react-simple-icons";
+import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
 
-import { GitHubURL, InstagramURL, LinkedInURL, YouTubeURL } from "@/lib/links";
+import { GitHubURL, InstagramURL, LinkedInURL } from "@/lib/links";
 import LinkedInIcon from "./lucide-custom/linkedin-icon";
 import ThemeToggle from "./theme-toggle";
 
@@ -13,7 +13,7 @@ const Footer = () => {
       </span>
 
       <div className="flex items-center gap-8 max-md:flex-col max-md:gap-4">
-        {/* <div className="flex items-center gap-6 max-md:order-2">
+        <div className="flex items-center gap-8 max-md:order-2 max-md:flex-col max-md:gap-4">
           <Link
             href="/terms-and-conditions"
             className="font-mono-brand text-[0.65rem] tracking-[0.05em] text-dim transition-colors duration-200 hover:text-primary"
@@ -26,16 +26,14 @@ const Footer = () => {
           >
             Privacy
           </Link>
-        </div> */}
-
-        <div className="flex items-center gap-6 max-md:order-1">
           <Link
-            href={YouTubeURL}
-            target="_blank"
-            className="text-dim transition-colors duration-200 hover:text-primary"
+            href="/brand-guidelines"
+            className="font-mono-brand text-[0.65rem] tracking-[0.05em] text-dim transition-colors duration-200 hover:text-primary"
           >
-            <SiYoutube className="h-4 w-4" />
+            Brand Guidelines
           </Link>
+        </div>
+        <div className="flex items-center gap-6 max-md:order-1">
           <Link
             href={InstagramURL}
             target="_blank"
@@ -54,7 +52,7 @@ const Footer = () => {
             <SiGithub className="h-4 w-4" />
           </Link>
         </div>
-        <div className="md:order-3">
+        <div className="max-md:order-1 md:order-3">
           <ThemeToggle />
         </div>
       </div>
