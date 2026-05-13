@@ -10,6 +10,12 @@ const Sitemap = (): MetadataRoute.Sitemap => {
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${DomainURL}/brand-guidelines`,
+      lastModified: new Date(),
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
   ];
 };
 

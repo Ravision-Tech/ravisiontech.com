@@ -28,8 +28,8 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: Branding.Logos.Logomark,
-        href: Branding.Logos.Logomark,
+        url: Branding.BrandAssets.logomarks.logomark.svg,
+        href: Branding.BrandAssets.logomarks.logomark.svg,
       },
     ],
   },
@@ -70,7 +70,7 @@ const RootLayout = ({
       </head>
       <body className="overflow-x-clip bg-surface-body">
         <ThemeProvider attribute="class" defaultTheme="dark">
-          <div className="flex min-h-screen flex-col overflow-x-hidden bg-background text-foreground">
+          <div className="flex min-h-screen flex-col overflow-x-clip bg-background text-foreground">
             <div
               aria-hidden
               className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(var(--grid-line)_1px,transparent_1px),linear-gradient(90deg,var(--grid-line)_1px,transparent_1px)] [background-size:64px_64px] bg-center"
