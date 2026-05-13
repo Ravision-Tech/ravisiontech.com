@@ -14,18 +14,18 @@ const Footer = () => {
 
       <div className="flex items-center gap-8 max-md:flex-col max-md:gap-4">
         <div className="flex items-center gap-8 max-md:order-2 max-md:flex-col max-md:gap-4">
-          <Link
+          {/* <Link
             href="/terms-and-conditions"
             className="font-mono-brand text-[0.65rem] tracking-[0.05em] text-dim transition-colors duration-200 hover:text-primary"
           >
             Terms
-          </Link>
-          <Link
+          </Link> */}
+          {/* <Link
             href="/privacy-policy"
             className="font-mono-brand text-[0.65rem] tracking-[0.05em] text-dim transition-colors duration-200 hover:text-primary"
           >
             Privacy
-          </Link>
+          </Link> */}
           <Link
             href="/brand-guidelines"
             className="font-mono-brand text-[0.65rem] tracking-[0.05em] text-dim transition-colors duration-200 hover:text-primary"

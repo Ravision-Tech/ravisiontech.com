@@ -49,24 +49,43 @@ const BrandGuidelinesPage = () => {
               <div>
                 <h2 className="text-[1.4rem] font-bold tracking-[-0.02em] text-foreground">Logo Icon</h2>
                 <p className="mt-1.5 text-[0.88rem] leading-[1.7] text-muted-foreground">
-                  The standalone logomark. Use on dark or brand-colored backgrounds for best contrast.
+                  The standalone icon mark. Use on dark or light backgrounds where space is tight and a wordmark
+                  isn&apos;t needed.
                 </p>
               </div>
-              <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
+              <div className="grid grid-cols-2 items-start gap-6 max-md:grid-cols-1">
                 <AssetCard
                   asset={Branding.BrandAssets.logomarks.logomark}
                   label="Logomark"
-                  sublabel="For dark backgrounds"
+                  sublabel="For any background with enough contrast"
                   bg="dark"
                   imgClassName="max-w-[100px]"
                 />
-                <AssetCard
-                  asset={Branding.BrandAssets.logomarks.logomark}
-                  label="Logomark on Brand Color"
-                  sublabel="For brand-colored backgrounds"
-                  bg="dark"
-                  imgClassName="max-w-[100px]"
-                />
+                <div className="flex flex-col gap-4 rounded-xl border border-border-muted bg-surface-card px-7 py-6">
+                  <div className="flex flex-col gap-2">
+                    <h3 className="text-[0.95rem] font-semibold tracking-[-0.01em] text-foreground">The Mark</h3>
+                    <p className="text-[0.82rem] leading-[1.7] text-muted-foreground">
+                      An eye, rendered in geometric facets. Sharp focus, precise craft, and the kind of attention that
+                      makes the difference between a site people leave and one they remember. The full brand palette
+                      lives inside the mark itself, so it works standalone without a wordmark.
+                    </p>
+                  </div>
+                  <ul className="flex flex-col gap-2.5 border-t border-border-muted pt-4">
+                    {[
+                      "Works on dark or light backgrounds as long as there is enough contrast.",
+                      "Minimum 24px rendered size; smaller than that, drop it.",
+                      "Never recolor, separate, or modify individual elements.",
+                    ].map((rule) => (
+                      <li
+                        key={rule}
+                        className="flex items-start gap-2.5 text-[0.82rem] leading-[1.65] text-muted-foreground"
+                      >
+                        <span className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-primary opacity-60" />
+                        {rule}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </div>
           </section>
@@ -219,7 +238,7 @@ const BrandGuidelinesPage = () => {
                   <ul className="flex flex-col gap-3">
                     {items.map((item) => (
                       <li key={item} className="flex gap-2.5 text-[0.82rem] leading-[1.65] text-muted-foreground">
-                        <span className="mt-[0.3em] h-1.5 w-1.5 shrink-0 rounded-full bg-current opacity-40" />
+                        <span className="mt-[0.55em] h-1.5 w-1.5 shrink-0 rounded-full bg-current opacity-40" />
                         {item}
                       </li>
                     ))}
