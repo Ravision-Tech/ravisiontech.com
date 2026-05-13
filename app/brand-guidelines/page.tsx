@@ -200,7 +200,7 @@ const BrandGuidelinesPage = () => {
               </div>
             </section>
 
-            <section id="user-guidance">
+            <section id="usage-notes">
               <SectionDivider label="05 · Usage Notes" />
               <div className="mt-8 grid grid-cols-3 gap-4 max-md:grid-cols-1">
                 {[

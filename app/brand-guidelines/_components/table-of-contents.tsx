@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 
 import { cn } from "@/lib/utils";
 
@@ -9,22 +9,22 @@ const sections = [
   { id: "logomark", num: "02", label: "Logomark" },
   { id: "wordmarks", num: "03", label: "Wordmarks" },
   { id: "combinationmarks", num: "04", label: "Combinationmarks" },
-  { id: "user-guidance", num: "05", label: "Usage Notes" },
+  { id: "usage-notes", num: "05", label: "Usage Notes" },
 ];
 
 export const TableOfContents = () => {
   const [active, setActive] = useState<string | null>(null);
-  const manualRef = useRef(false);
 
   useEffect(() => {
     const lastId = sections[sections.length - 1].id;
+    let prevScrollY = window.scrollY;
 
     const onScroll = () => {
-      if (manualRef.current) return;
-
       const scrollY = window.scrollY;
-      const nearBottom = scrollY + window.innerHeight >= document.documentElement.scrollHeight - 80;
-      if (nearBottom) {
+      const scrollingDown = scrollY > prevScrollY;
+      prevScrollY = scrollY;
+
+      if (scrollingDown && scrollY + window.innerHeight >= document.documentElement.scrollHeight - 80) {
         setActive(lastId);
         return;
       }
@@ -55,13 +55,6 @@ export const TableOfContents = () => {
           <a
             key={id}
             href={`#${id}`}
-            onClick={() => {
-              setActive(id);
-              manualRef.current = true;
-              setTimeout(() => {
-                manualRef.current = false;
-              }, 1000);
-            }}
             className={cn(
               "group flex items-center gap-3 rounded-md py-1.5 text-[0.78rem] transition-colors duration-200",
               isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
