@@ -10,6 +10,7 @@ import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import { Branding } from "@/lib/branding";
 import { DomainURL } from "@/lib/links";
+import { StructuredData } from "@/lib/seo";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -69,6 +70,13 @@ const RootLayout = ({
         <link rel="preconnect" href="https://www.gstatic.com" crossOrigin="" />
       </head>
       <body className="overflow-x-clip bg-surface-body">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(StructuredData.JsonLd).replace(/</g, "\\u003c"),
+          }}
+        />
+
         <ThemeProvider attribute="class" defaultTheme="dark">
           <div className="flex min-h-screen flex-col overflow-x-clip bg-background text-foreground">
             <div
