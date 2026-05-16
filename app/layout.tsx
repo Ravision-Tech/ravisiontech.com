@@ -66,6 +66,7 @@ const RootLayout = ({
   return (
     <html lang="en" suppressHydrationWarning className={`${montserrat.variable} ${jetbrainsMono.variable}`}>
       <head>
+        <meta name="apple-mobile-web-app-title" content="RavisionTech" />
         <link rel="preconnect" href="https://www.google.com" />
         <link rel="preconnect" href="https://www.gstatic.com" crossOrigin="" />
       </head>
