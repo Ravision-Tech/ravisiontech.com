@@ -5,7 +5,7 @@ import { DomainURL } from "@/lib/links";
 
 export const metadata: Metadata = {
   title: `${Branding.Name} – Brand Guidelines`,
-  description: `${Branding.Name}  brand guidelines including official logos, colors, and usage rules for our visual identity.`,
+  description: `${Branding.Name} brand guidelines including official logos, colors, and usage rules for our visual identity.`,
   openGraph: {
     type: "website",
     url: `${DomainURL}/brand-guidelines`,
