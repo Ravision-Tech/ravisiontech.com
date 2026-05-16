@@ -5,7 +5,7 @@ interface EmailTemplateProps {
   detailsEscaped: string;
 }
 
-export function buildEmailHtml({ name, email, service, detailsEscaped }: EmailTemplateProps) {
+const BuildEmailHtml = ({ name, email, service, detailsEscaped }: EmailTemplateProps) => {
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,4 +72,6 @@ export function buildEmailHtml({ name, email, service, detailsEscaped }: EmailTe
   </table>
 </body>
 </html>`;
-}
+};
+
+export default BuildEmailHtml;

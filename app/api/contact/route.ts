@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { google } from "googleapis";
 
-import { buildEmailHtml } from "./emailTemplate";
+import BuildEmailHtml from "./emailTemplate";
 
 const TO = process.env.CONTACT_EMAIL_TO!;
 
@@ -54,7 +54,7 @@ export async function POST(req: Request) {
       .replace(/>/g, "&gt;")
       .replace(/\n/g, "<br>");
 
-    const htmlBody = buildEmailHtml({ name, email, service, detailsEscaped });
+    const htmlBody = BuildEmailHtml({ name, email, service, detailsEscaped });
 
     const plainBody = [
       `New Contact Form Inquiry`,
