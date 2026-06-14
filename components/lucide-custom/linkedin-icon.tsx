@@ -19,6 +19,10 @@ const LinkedInIconBase = createLucideIcon("linkedin", [
   ],
 ]);
 
-const LinkedInIcon = ((props: LucideProps) => <LinkedInIconBase aria-hidden="true" {...props} />) as LucideIcon;
+const LinkedInIcon = (({ ...props }: LucideProps) => (
+  <LinkedInIconBase aria-label="LinkedIn" aria-hidden="true" {...props}>
+    <title>LinkedIn</title>
+  </LinkedInIconBase>
+)) as LucideIcon;
 
 export default LinkedInIcon;
