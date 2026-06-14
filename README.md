@@ -28,13 +28,13 @@ node -v # Should be v24.X
 2. **Install Node Dependencies**: Install all the dependencies that the project uses by running the following command in the project's root directory:
 
 ```sh
-npm install
+pnpm install
 ```
 
 3. **Start the Development Server**: Start the development server to see your changes live:
 
 ```sh
-npm run dev
+pnpm dev
 ```
 
 4. Open the website by visiting <http://localhost:3000> with your browser. When you make changes to a code file and save the file, the live preview will update on the url automatically.
