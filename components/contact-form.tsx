@@ -140,6 +140,7 @@ const ContactFormInner = () => {
             <option>E-Commerce</option>
             <option>SEO &amp; Performance</option>
             <option>Full Package</option>
+            <option>Iris CMS</option>
             <option>Other</option>
             <option>Not Sure Yet</option>
           </select>
