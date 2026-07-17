@@ -6,7 +6,7 @@ import "./globals.css";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-import Footer from "@/components/footer";
+import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar";
 import { Branding } from "@/lib/branding";
 import { DomainURL } from "@/lib/links";
