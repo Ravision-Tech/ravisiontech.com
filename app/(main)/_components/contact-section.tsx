@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { MailIcon, MapPinIcon } from "lucide-react";
 
-import ContactForm from "@/components/contact-form";
+import ContactForm from "@/components/contact-form/contact-form-lazy";
 import SectionLabel from "@/components/section-label";
 import { Branding } from "@/lib/branding";
 

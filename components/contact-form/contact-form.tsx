@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronDownIcon, Loader2Icon, SendHorizonalIcon, SparklesIcon } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
@@ -8,11 +8,7 @@ import { GoogleReCaptchaProvider, useGoogleReCaptcha } from "react-google-recapt
 
 import Button from "@/components/button";
 import { cn } from "@/lib/utils";
-
-const inputClass =
-  "bg-background border border-border text-foreground px-4 placeholder-dim py-[0.85rem] rounded-lg font-sans text-[16px] md:text-[0.88rem] outline-none focus:border-primary transition-colors duration-200 w-full appearance-none";
-
-const labelClass = "font-mono-brand text-[0.65rem] tracking-[0.14em] uppercase text-muted-foreground";
+import { inputClass, labelClass } from "../../lib/helpers/contact-form-field-styles";
 
 const ContactFormInner = () => {
   const [sent, setSent] = useState(false);
@@ -216,10 +212,16 @@ const ContactFormInner = () => {
   );
 };
 
-const ContactForm = () => (
-  <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY!}>
-    <ContactFormInner />
-  </GoogleReCaptchaProvider>
-);
+const ContactForm = ({ onReady }: { onReady?: () => void }) => {
+  useEffect(() => {
+    onReady?.();
+  }, [onReady]);
+
+  return (
+    <GoogleReCaptchaProvider reCaptchaKey={process.env.NEXT_PUBLIC_RECAPTCHA_V3_SITE_KEY!}>
+      <ContactFormInner />
+    </GoogleReCaptchaProvider>
+  );
+};
 
 export default ContactForm;

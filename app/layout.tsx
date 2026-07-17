@@ -3,6 +3,7 @@ import { JetBrains_Mono, Montserrat } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
+import "@aejkatappaja/phantom-ui/ssr.css";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 

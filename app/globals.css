@@ -299,6 +299,13 @@ html {
   border-radius: 3px;
 }
 
+phantom-ui:not(:defined) * {
+  color: transparent !important;
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
 /* CSS class when an element needs to be only seen by screen readers */
 .sr-only {
   position: absolute;
