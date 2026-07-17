@@ -85,7 +85,7 @@ const RootLayout = ({
               className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(var(--grid-line)_1px,transparent_1px),linear-gradient(90deg,var(--grid-line)_1px,transparent_1px)] [background-size:64px_64px] bg-center"
             />
             <Navbar />
-            {children}
+            <main className="flex flex-col">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

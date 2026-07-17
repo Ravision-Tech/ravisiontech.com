@@ -37,6 +37,7 @@ const Footer = () => {
           <Link
             href={InstagramURL}
             target="_blank"
+            aria-label="Instagram"
             className="text-dim transition-colors duration-200 hover:text-primary"
           >
             <SiInstagram className="h-4 w-4" />
@@ -44,11 +45,17 @@ const Footer = () => {
           <Link
             href={LinkedInURL}
             target="_blank"
+            aria-label="LinkedIn"
             className="text-dim transition-colors duration-200 hover:text-primary"
           >
             <LinkedInIcon className="h-5 w-5" />
           </Link>
-          <Link href={GitHubURL} target="_blank" className="text-dim transition-colors duration-200 hover:text-primary">
+          <Link
+            href={GitHubURL}
+            target="_blank"
+            aria-label="GitHub"
+            className="text-dim transition-colors duration-200 hover:text-primary"
+          >
             <SiGithub className="h-4 w-4" />
           </Link>
         </div>
