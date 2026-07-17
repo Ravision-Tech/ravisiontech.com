@@ -3,10 +3,11 @@ import { JetBrains_Mono, Montserrat } from "next/font/google";
 import { ThemeProvider } from "next-themes";
 
 import "./globals.css";
+import "@aejkatappaja/phantom-ui/ssr.css";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 
-import Footer from "@/components/footer";
+import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar";
 import { Branding } from "@/lib/branding";
 import { DomainURL } from "@/lib/links";
@@ -85,7 +86,7 @@ const RootLayout = ({
               className="pointer-events-none fixed inset-0 z-0 bg-[linear-gradient(var(--grid-line)_1px,transparent_1px),linear-gradient(90deg,var(--grid-line)_1px,transparent_1px)] [background-size:64px_64px] bg-center"
             />
             <Navbar />
-            {children}
+            <main className="flex flex-col">{children}</main>
             <Footer />
           </div>
         </ThemeProvider>

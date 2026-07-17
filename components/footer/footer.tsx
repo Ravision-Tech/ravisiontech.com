@@ -2,8 +2,9 @@ import Link from "next/link";
 import { SiGithub, SiInstagram } from "@icons-pack/react-simple-icons";
 
 import { GitHubURL, InstagramURL, LinkedInURL } from "@/lib/links";
-import LinkedInIcon from "./lucide-custom/linkedin-icon";
-import ThemeToggle from "./theme-toggle";
+import LinkedInIcon from "../lucide-custom/linkedin-icon";
+import ThemeToggle from "../theme-toggle";
+import FooterIconLink from "./footer-icon-link";
 
 const Footer = () => {
   return (
@@ -34,23 +35,9 @@ const Footer = () => {
           </Link>
         </div>
         <div className="flex items-center gap-6 max-md:order-2">
-          <Link
-            href={InstagramURL}
-            target="_blank"
-            className="text-dim transition-colors duration-200 hover:text-primary"
-          >
-            <SiInstagram className="h-4 w-4" />
-          </Link>
-          <Link
-            href={LinkedInURL}
-            target="_blank"
-            className="text-dim transition-colors duration-200 hover:text-primary"
-          >
-            <LinkedInIcon className="h-5 w-5" />
-          </Link>
-          <Link href={GitHubURL} target="_blank" className="text-dim transition-colors duration-200 hover:text-primary">
-            <SiGithub className="h-4 w-4" />
-          </Link>
+          <FooterIconLink linkName="Instagram" link={InstagramURL} icon={SiInstagram} />
+          <FooterIconLink linkName="LinkedIn" link={LinkedInURL} icon={LinkedInIcon} iconClassName="w-5 h-5" />
+          <FooterIconLink linkName="GitHub" link={GitHubURL} icon={SiGithub} />
         </div>
         <div className="max-md:order-1 md:order-3">
           <ThemeToggle />
