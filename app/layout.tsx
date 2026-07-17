@@ -9,6 +9,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 
 import Footer from "@/components/footer/footer";
 import Navbar from "@/components/navbar";
+import ScrollToTop from "@/components/scroll-to-top";
 import { Branding } from "@/lib/branding";
 import { DomainURL } from "@/lib/links";
 import { StructuredData } from "@/lib/seo";
@@ -88,6 +89,7 @@ const RootLayout = ({
             <Navbar />
             <main className="flex flex-col">{children}</main>
             <Footer />
+            <ScrollToTop />
           </div>
         </ThemeProvider>
       </body>
