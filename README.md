@@ -22,7 +22,7 @@ uses [React](https://reactjs.org/).
 Run the follow command to make sure that you are on the correct version of node:
 
 ```sh
-node -v # Should be v24.X
+node -v # Should be v24.x.x
 ```
 
 2. **Install Node Dependencies**: Install all the dependencies that the project uses by running the following command in the project's root directory:
